@@ -1,4 +1,8 @@
 let StartFunc = async () => {
+    document.getElementById("HeadId").addEventListener("click", jFLocalClickFunc);
+};
+
+let jFLocalClickFunc = async () => {
     let jVarLocalXml = await jFLocalGetXml();
 
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
@@ -8,7 +12,10 @@ let StartFunc = async () => {
     $table.bootstrapTable({
         data: jVarLocalItemsJson
     });
+
+    webSocket.send(JSON.stringify(jVarLocalItemsJson));
 };
+
 
 let FromTally = async ({ inXml }) => {
     const config = {
