@@ -63,9 +63,12 @@
       ]
     },
     "chrome": {
-      "width": 800,
-      "height": 500,
-      "args": "--disable-web-security --disable-gpu --user-agent=\"Neutralinojs chrome mode\"",
+      "width": 1100,
+      "height": 700,
+      "fullScreen": true,
+      "maximize": true,
+      "resizable": false,
+      "args": "--disable-web-security --disable-gpu --start-maximized",
       "nativeBlockList": [
         "filesystem.*",
         "os.*"
@@ -73,7 +76,7 @@
     }
   },
   "cli": {
-    "binaryName": "k10",
+    "binaryName": "k23",
     "resourcesPath": "/resources/",
     "extensionsPath": "/extensions/",
     "clientLibrary": "/resources/js/neutralino.js",

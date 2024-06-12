@@ -5,12 +5,15 @@ let StartFunc = async () => {
 let jFLocalClickFunc = async () => {
     // console.log("------------- ");
     let jVarLocalXml = await jFLocalGetXml();
-    console.log("-------------jVarLocalXml :  ", jVarLocalXml);
+    // console.log("-------------jVarLocalXml :  ", jVarLocalXml);
 
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
+    console.log("-------------jVarLocalItemData :  ", jVarLocalItemData);
+
     let jVarLocalItemsJson = jFLocalXmlToJson({ inXmlFromTally: jVarLocalItemData });
-    // console.log("jVarLocalItemsJson : ", jVarLocalItemsJson);
-    var $table = $('#table');
+    console.log("jVarLocalItemsJson : ", jVarLocalItemsJson);
+    var $table = $('#tableBS');
+
     $table.bootstrapTable({
         data: jVarLocalItemsJson
     });
@@ -49,7 +52,7 @@ const jFLocalXmlToJson = ({ inXmlFromTally }) => {
     let ReturnArray = [];
 
     const parser = new DOMParser();
-    const doc = parser.parseFromString(jVarLocalItemsXml, "application/xml");
+    const doc = parser.parseFromString(jVarLocalItemsXml.replaceAll("&#4;", ""), "application/xml");
 
     let checkboxes = doc.documentElement.querySelectorAll("STOCKITEMS");
 
