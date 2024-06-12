@@ -268,12 +268,16 @@
         </header>
 
         <div class="container">
+            <div class="spinner-border" id="SpinnerId" role="status" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
             <div class="row">
                 <div class="col">
                     <table id="tableBS" data-pagination="true">
                         <thead>
                             <tr>
                                 <th data-field="ItemName">Item Name</th>
+                                <th data-field="Rate">Rate</th>
                             </tr>
                         </thead>
                     </table>
@@ -303,10 +307,9 @@
     <script>
         var $table = $('#tableBS');
 
-        // $table.bootstrapTable({
-        //     data: []
-        // });
-
+        $table.bootstrapTable({
+            data: []
+        });
     </script>
 </body>
 

@@ -2,25 +2,31 @@ let StartFunc = async () => {
     document.getElementById("HeadId").addEventListener("click", jFLocalClickFunc);
 };
 
-let jFLocalClickFunc = async () => {
-    // console.log("------------- ");
-    let jVarLocalXml = await jFLocalGetXml();
-    // console.log("-------------jVarLocalXml :  ", jVarLocalXml);
-
-    let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
-    console.log("-------------jVarLocalItemData :  ", jVarLocalItemData);
-
-    let jVarLocalItemsJson = jFLocalXmlToJson({ inXmlFromTally: jVarLocalItemData });
-    console.log("jVarLocalItemsJson : ", jVarLocalItemsJson);
-    var $table = $('#tableBS');
-
-    $table.bootstrapTable({
-        data: jVarLocalItemsJson
-    });
-
-    // webSocket.send(JSON.stringify(jVarLocalItemsJson));
+let jFLocalHideSpinner = () => {
+    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
+    jVarLocalSpinnerId.style.display = "none";
 };
 
+let jFLocalShowSpinner = () => {
+    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
+    jVarLocalSpinnerId.style.display = "";
+};
+
+let jFLocalClickFunc = async () => {
+    jFLocalShowSpinner();
+
+    let jVarLocalXml = await jFLocalGetXml();
+
+    let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
+
+    let jVarLocalItemsJson = jFLocalXmlToJson({ inXmlFromTally: jVarLocalItemData });
+
+    var $table = $('#tableBS');
+
+    $table.bootstrapTable("load", jVarLocalItemsJson);
+
+    jFLocalHideSpinner();
+};
 
 let FromTally = async ({ inXml }) => {
     const config = {
