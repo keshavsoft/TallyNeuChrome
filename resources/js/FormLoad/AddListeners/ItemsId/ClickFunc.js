@@ -1,8 +1,4 @@
-import xmlsNeededJson from './xmlsNeeded.json' with {type: 'json'};
-
-let StartFunc = async () => {
-    document.getElementById("HeadId").addEventListener("click", jFLocalClickFunc);
-};
+import xmlsNeededJson from '../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -14,7 +10,7 @@ let jFLocalShowSpinner = () => {
     jVarLocalSpinnerId.style.display = "";
 };
 
-let jFLocalClickFunc = async () => {
+let StartFunc = async () => {
     jFLocalShowSpinner();
 
     let jVarLocalXml = await jFLocalGetXml();
@@ -85,4 +81,4 @@ const jFLocalXmlToJson = ({ inXmlFromTally }) => {
     return ReturnArray;
 };
 
-StartFunc().then();
+export { StartFunc };
