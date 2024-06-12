@@ -1,5 +1,4 @@
 import xmlsNeededJson from '../../../FromTally/xmlsNeeded.json' with {type: 'json'};
-import ColumnsJson from './columns.json' with {type: 'json'};
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -23,8 +22,11 @@ let StartFunc = async () => {
     var $table = $('#tableBS');
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        columns: ColumnsJson,
-        data: jVarLocalItemsJson
+        columns: [
+            {
+                field: "LedgerName"
+            }
+        ], data: jVarLocalItemsJson
     });
 
     jFLocalHideSpinner();
@@ -47,7 +49,7 @@ let FromTally = async ({ inXml }) => {
 };
 
 let jFLocalGetXml = async () => {
-    let jVarLocalUrl = xmlsNeededJson.ItemsSimple;
+    let jVarLocalUrl = xmlsNeededJson.ledgersSimple;
 
     let jVarLocalResponse = await fetch(jVarLocalUrl);
     let jVarLocalData = await jVarLocalResponse.text();
@@ -62,20 +64,14 @@ const jFLocalXmlToJson = ({ inXmlFromTally }) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(jVarLocalItemsXml.replaceAll("&#4;", ""), "application/xml");
 
-    let checkboxes = doc.documentElement.querySelectorAll("STOCKITEMS");
+    let checkboxes = doc.documentElement.querySelectorAll("LEDGERS");
 
     checkboxes.forEach((userItem) => {
         let LoopInsideObject = {};
-        let LoopInsideName = userItem.querySelector("KSSTOCKITEMNAME");
+        let LoopInsideName = userItem.querySelector("NAME");
 
         if (LoopInsideName === null === false) {
-            LoopInsideObject.ItemName = LoopInsideName.innerHTML;
-        };
-
-        let LoopInsideRate = userItem.querySelector("ksstockopeningrate".toUpperCase());
-
-        if (LoopInsideRate === null === false) {
-            LoopInsideObject.Rate = LoopInsideRate.innerHTML;
+            LoopInsideObject.LedgerName = LoopInsideName.innerHTML;
         };
 
         ReturnArray.push(LoopInsideObject);

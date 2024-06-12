@@ -1,3 +1,4 @@
 {
-    "ItemsSimple": "Tally/xml/itemsSimple.xml"
+    "ItemsSimple": "Tally/xml/itemsSimple.xml",
+    "ledgersSimple": "Tally/xml/ledgersSimple.xml"
 }
