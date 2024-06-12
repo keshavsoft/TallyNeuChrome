@@ -24,7 +24,7 @@
                         <SCROLLED>Vertical</SCROLLED>
                     </PART>
                     <LINE NAME="CredFlow_CompanyWiseStockItem" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
-                        <LEFTFIELDS>CredFlow_StockItemName, CredFlow_StockOpeningRate</LEFTFIELDS>
+                        <LEFTFIELDS>CredFlow_StockItemName</LEFTFIELDS>
                         <XMLTAG>&quot;stockitems&quot;</XMLTAG>
                     </LINE>
 

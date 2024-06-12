@@ -3,17 +3,19 @@ let StartFunc = async () => {
 };
 
 let jFLocalClickFunc = async () => {
+    // console.log("------------- ");
     let jVarLocalXml = await jFLocalGetXml();
+    console.log("-------------jVarLocalXml :  ", jVarLocalXml);
 
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
     let jVarLocalItemsJson = jFLocalXmlToJson({ inXmlFromTally: jVarLocalItemData });
-    console.log("jVarLocalItemsJson : ", jVarLocalItemsJson);
+    // console.log("jVarLocalItemsJson : ", jVarLocalItemsJson);
     var $table = $('#table');
     $table.bootstrapTable({
         data: jVarLocalItemsJson
     });
 
-    webSocket.send(JSON.stringify(jVarLocalItemsJson));
+    // webSocket.send(JSON.stringify(jVarLocalItemsJson));
 };
 
 
@@ -53,11 +55,17 @@ const jFLocalXmlToJson = ({ inXmlFromTally }) => {
 
     checkboxes.forEach((userItem) => {
         let LoopInsideObject = {};
+        console.log("userItem : ", userItem);
+        let LoopInsideName = userItem.querySelector("KSSTOCKITEMNAME");
 
-        let LoopInsideRate = userItem.querySelector("KSSTOCKITEMNAME");
+        if (LoopInsideName === null === false) {
+            LoopInsideObject.ItemName = LoopInsideName.innerHTML;
+        };
+
+        let LoopInsideRate = userItem.querySelector("ksstockopeningrate".toUpperCase());
 
         if (LoopInsideRate === null === false) {
-            LoopInsideObject.ItemName = LoopInsideRate.innerHTML;
+            LoopInsideObject.Rate = LoopInsideRate.innerHTML;
         };
 
         ReturnArray.push(LoopInsideObject);

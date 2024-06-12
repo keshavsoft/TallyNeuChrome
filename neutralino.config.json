@@ -65,7 +65,7 @@
     "chrome": {
       "width": 800,
       "height": 500,
-      "args": "--disable-web-security --disable-gpu",
+      "args": "--disable-web-security --disable-gpu --user-agent=\"Neutralinojs chrome mode\"",
       "nativeBlockList": [
         "filesystem.*",
         "os.*"
@@ -73,7 +73,7 @@
     }
   },
   "cli": {
-    "binaryName": "k1",
+    "binaryName": "k10",
     "resourcesPath": "/resources/",
     "extensionsPath": "/extensions/",
     "clientLibrary": "/resources/js/neutralino.js",
