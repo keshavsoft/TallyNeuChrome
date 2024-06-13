@@ -1,6 +1,6 @@
 [
     {
-        "field": "StockCategory",
-        "title": "StockCategory"
+        "field": "StockGroup",
+        "title": "StockGroup"
     }
 ]

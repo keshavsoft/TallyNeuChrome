@@ -1,7 +1,7 @@
 import xmlsNeededJson from '../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 import ColumnsJson from './columns.json' with {type: 'json'};
-const CommonParentTagName = "STOCKCATEGORIES";
-const CommonTagName = "KSSTOCKCATEGORYNAME";
+const CommonParentTagName = "STOCKGROUPS";
+const CommonTagName = "KSGROUPNAME";
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -34,10 +34,6 @@ let StartFunc = async () => {
 let FromTally = async ({ inXml }) => {
     const config = {
         method: 'POST',
-        headers: {
-            'Accept': 'application/xml',
-            'Content-Type': 'text/xml',
-        },
         body: inXml
     };
 
@@ -48,7 +44,7 @@ let FromTally = async ({ inXml }) => {
 };
 
 let jFLocalGetXml = async () => {
-    let jVarLocalUrl = xmlsNeededJson.StockCategory;
+    let jVarLocalUrl = xmlsNeededJson.StockGroups;
 
     let jVarLocalResponse = await fetch(jVarLocalUrl);
     let jVarLocalData = await jVarLocalResponse.text();
@@ -59,23 +55,27 @@ let jFLocalGetXml = async () => {
 const jFLocalXmlToJson = ({ inXmlFromTally }) => {
     let jVarLocalItemsXml = inXmlFromTally;
     let ReturnArray = [];
+  
+    try {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(jVarLocalItemsXml.replaceAll("&#4;", ""), "text/xml");
+        console.log("doc : ", doc);
+        let checkboxes = doc.documentElement.querySelectorAll(CommonParentTagName);
+        console.log("checkboxes : ", checkboxes);
+        checkboxes.forEach((userItem) => {
+            let LoopInsideObject = {};
+            let LoopInsideName = userItem.querySelector(CommonTagName);
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(jVarLocalItemsXml.replaceAll("&#4;", ""), "application/xml");
+            if (LoopInsideName === null === false) {
+                LoopInsideObject.StockGroup = LoopInsideName.innerHTML;
+            };
 
-    let checkboxes = doc.documentElement.querySelectorAll(CommonParentTagName);
+            ReturnArray.push(LoopInsideObject);
+        });
 
-    checkboxes.forEach((userItem) => {
-        let LoopInsideObject = {};
-        let LoopInsideName = userItem.querySelector(CommonTagName);
-
-        if (LoopInsideName === null === false) {
-            LoopInsideObject.StockCategory = LoopInsideName.innerHTML;
-        };
-
-        ReturnArray.push(LoopInsideObject);
-    });
-
+    } catch (error) {
+        console.log("error : ", error);
+    };
     return ReturnArray;
 };
 
