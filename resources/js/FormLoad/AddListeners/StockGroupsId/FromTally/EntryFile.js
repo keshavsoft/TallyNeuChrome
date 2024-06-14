@@ -1,32 +1,15 @@
-import xmlsNeededJson from '../../../FromTally/xmlsNeeded.json' with {type: 'json'};
-import ColumnsJson from './columns.json' with {type: 'json'};
-import { StartFunc as StartFuncFromTally } from "./FromTally/EntryFile.js";
-
+import xmlsNeededJson from '../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 const CommonParentTagName = "STOCKGROUPS";
 const CommonTagName = "KSGROUPNAME";
 
-let jFLocalHideSpinner = () => {
-    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
-    jVarLocalSpinnerId.style.display = "none";
-};
-
-let jFLocalShowSpinner = () => {
-    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
-    jVarLocalSpinnerId.style.display = "";
-};
-
 let StartFunc = async () => {
-    await StartFuncFromTally();
+    let jVarLocalXml = await jFLocalGetXml();
 
-    let jVarLocalItemsJson = localStorage.getItem("tableArray");
+    let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
 
-    var $table = $('#tableBS');
+    let jVarLocalItemsJson = jFLocalXmlToJson({ inXmlFromTally: jVarLocalItemData });
 
-    $table.bootstrapTable("destroy").bootstrapTable({
-        columns: ColumnsJson, data: JSON.parse(jVarLocalItemsJson)
-    });
-
-    jFLocalHideSpinner();
+    localStorage.setItem("tableArray", JSON.stringify(jVarLocalItemsJson));
 };
 
 let FromTally = async ({ inXml }) => {
@@ -57,9 +40,9 @@ const jFLocalXmlToJson = ({ inXmlFromTally }) => {
     try {
         const parser = new DOMParser();
         const doc = parser.parseFromString(jVarLocalItemsXml.replaceAll("&#4;", ""), "text/xml");
-        console.log("doc : ", doc);
+
         let checkboxes = doc.documentElement.querySelectorAll(CommonParentTagName);
-        console.log("checkboxes : ", checkboxes);
+
         checkboxes.forEach((userItem) => {
             let LoopInsideObject = {};
             let LoopInsideName = userItem.querySelector(CommonTagName);
