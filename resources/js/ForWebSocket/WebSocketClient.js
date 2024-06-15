@@ -1,5 +1,6 @@
 import { StartFunc as StartFunconScreen } from './onScreen/EntryFile.js';
 import { StartFunc as StartFunconOpen } from "./onOpen/EntryFile.js";
+import UrlJson from './url.json' with {type: 'json'};
 
 let jVarLocalHostName = window.location.host;
 let jVarLocalUrlForWS;
@@ -11,7 +12,7 @@ if (location.protocol === "http:") {
     jVarLocalUrlForWS = "ws://" + jVarLocalHostName;
 };
 
-jVarLocalUrlForWS = "ws://localhost:7018/";
+jVarLocalUrlForWS = UrlJson.WebSocketUrl;
 
 // let webSocket;
 let StartFunc = () => {
