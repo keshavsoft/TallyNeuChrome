@@ -2,5 +2,6 @@
     "ItemsSimple": "Tally/xml/itemsSimple.xml",
     "ledgersSimple": "Tally/xml/ledgersSimple.xml",
     "StockCategory": "Tally/xml/StockCategory.xml",
-    "StockGroups": "Tally/xml/StockGroups.xml"
+    "StockGroups": "Tally/xml/StockGroups.xml",
+    "TransactionsSales": "Tally/xml/Transactions/Sales.xml"
 }
