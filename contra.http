@@ -1,0 +1,160 @@
+POST http://localhost:9000
+
+<ENVELOPE>
+    <HEADER>
+        <VERSION>1</VERSION>
+        <TALLYREQUEST>Export</TALLYREQUEST>
+        <TYPE>Data</TYPE>
+        <ID>CredFlow_CompanyWiseContra</ID>
+    </HEADER>
+    <BODY>
+        <DESC>
+            <STATICVARIABLES>
+                <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
+            </STATICVARIABLES>
+            <TDL>
+                <TDLMESSAGE>
+                    <REPORT NAME="CredFlow_CompanyWiseContra" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <VARIABLE>SVCURRENTCOMPANY,Report Title</VARIABLE>
+                        <FORMS>CredFlow_CompanyWiseContra</FORMS>
+                    </REPORT>
+                    <FORM NAME="CredFlow_CompanyWiseContra" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <TOPPARTS>CredFlow_CompanyWiseContra</TOPPARTS>
+                    </FORM>
+                    <PART NAME="CredFlow_CompanyWiseContra" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <TOPLINES>CredFlow_CompanyWiseContra</TOPLINES>
+                        <REPEAT>CredFlow_CompanyWiseContra : CredFlow_loopContra</REPEAT>
+                        <SCROLLED>Vertical</SCROLLED>
+                    </PART>
+                    <LINE NAME="CredFlow_CompanyWiseContra" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <LEFTFIELDS>CredFlow_contravchnumber, CredFlow_contravchguid, CredFlow_contravchpartyledgername, CredFlow_contravcheffectivedate, CredFlow_contravoucher_ledgerentriesname, CredFlow_contravoucher_ledgerentriesamount, CredFlow_contravoucher_ledgerentriespositive, CredFlow_contravchalterid, CredFlow_Optional, CredFlow_voucher_cancelled, CredFlow_contra_reference,Credflow_contravoucher_GSTREGISTRATION,Credflow_contravoucher_CMPGSTIN,Credflow_contravoucher_CMPGSTREGISTRATIONTYPE,Credflow_contravoucher_CMPGSTSTATE, credflow_contra_instrument_date, credflow_contra_transaction_type, credflow_contra_instrument_number, credflow_contra_bank_name, credflow_contra_payment_mode</LEFTFIELDS>
+                        <XMLTAG>&quot;Contra&quot;</XMLTAG>
+                    </LINE>
+                    <FIELD NAME="CredFlow_contravchnumber" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Voucher Number&quot;</XMLTAG>
+                        <SET>$contravchnumber</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contra_reference" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Reference&quot;</XMLTAG>
+                        <SET>$credflow_contra_reference</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravchguid" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Voucher Guid&quot;</XMLTAG>
+                        <SET>$contravchguid</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravchpartyledgername" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Party Name&quot;</XMLTAG>
+                        <SET>$contravchpartyledgername</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravcheffectivedate" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Date&quot;</XMLTAG>
+                        <SET>$contravcheffectivedate</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravoucher_ledgerentriesname" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Ledger_Name&quot;</XMLTAG>
+                        <SET>$contravoucher_ledgerentriesname</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravoucher_ledgerentriesamount" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Ledger_Amount&quot;</XMLTAG>
+                        <SET>$contravoucher_ledgerentriesamount</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravoucher_ledgerentriespositive" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Ledger_Positive&quot;</XMLTAG>
+                        <SET>$contravoucher_ledgerentriespositive</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_contravchalterid" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Alter ID&quot;</XMLTAG>
+                        <SET>$contravchalterid</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_Optional" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Optional&quot;</XMLTAG>
+                        <SET>$optional</SET>
+                    </FIELD>
+                    <FIELD NAME="CredFlow_voucher_cancelled" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;voucher_cancelled&quot;</XMLTAG>
+                        <SET>$voucher_cancelled</SET>
+                    </FIELD>
+                    <FIELD NAME="Credflow_contravoucher_GSTREGISTRATION" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Credflow_GSTREGISTRATION&quot;</XMLTAG>
+                        <SET>$Credflow_GSTREGISTRATION</SET>
+                    </FIELD>
+                    <FIELD NAME="Credflow_contravoucher_CMPGSTIN" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Credflow_CMPGSTIN&quot;</XMLTAG>
+                        <SET>$Credflow_CMPGSTIN</SET>
+                    </FIELD>
+                    <FIELD NAME="Credflow_contravoucher_CMPGSTREGISTRATIONTYPE" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Credflow_CMPGSTREGISTRATIONTYPE&quot;</XMLTAG>
+                        <SET>$Credflow_CMPGSTREGISTRATIONTYPE</SET>
+                    </FIELD>
+                    <FIELD NAME="Credflow_contravoucher_CMPGSTSTATE" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Credflow_CMPGSTSTATE&quot;</XMLTAG>
+                        <SET>$Credflow_CMPGSTSTATE</SET>
+                    </FIELD>
+                    <FIELD NAME="credflow_contra_instrument_date" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Instrument_date&quot;</XMLTAG>
+                        <SET>$credflow_contra_instrument_date</SET>
+                    </FIELD>
+                    <FIELD NAME="credflow_contra_transaction_type" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Transaction_type&quot;</XMLTAG>
+                        <SET>$credflow_contra_transaction_type</SET>
+                    </FIELD>
+                    <FIELD NAME="credflow_contra_instrument_number" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Instrument_number&quot;</XMLTAG>
+                        <SET>$credflow_contra_instrument_number</SET>
+                    </FIELD>
+                    <FIELD NAME="credflow_contra_bank_name" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Bank_name&quot;</XMLTAG>
+                        <SET>$credflow_contra_bank_name</SET>
+                    </FIELD>
+                    <FIELD NAME="credflow_contra_payment_mode" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <XMLTAG>&quot;Payment_mode&quot;</XMLTAG>
+                        <SET>$credflow_contra_payment_mode</SET>
+                    </FIELD>
+                    <COLLECTION NAME="CredFlow_datacoll" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <TYPE>vouchers:vouchertype</TYPE>
+                        <CHILDOF>$$VchTypeContra</CHILDOF>
+                        <BELONGSTO>Yes</BELONGSTO>
+                        <METHOD>contravchnumber:$vouchernumber</METHOD>
+                        <METHOD>credflow_contra_reference:$reference</METHOD>
+                        <METHOD>contravchguid:$guid</METHOD>
+                        <METHOD>optional : $Isoptional</METHOD>
+                        <METHOD>contravchpartyledgername:$partyledgername</METHOD>
+                        <METHOD>contravcheffectivedate:$effectivedate</METHOD>
+                        <METHOD>contravoucher_ledgerentriesname:$$FullListEx:&quot;^&quot;:ledgerentries:$ledgername</METHOD>
+                        <METHOD>contravoucher_ledgerentriesamount:$$FullListEx:&quot;^&quot;:ledgerentries:$amount</METHOD>
+                        <METHOD>contravoucher_ledgerentriespositive:$$FullListEx:&quot;^&quot;:ledgerentries:$isdeemedpositive</METHOD>
+                        <METHOD>contravchalterid:$alterid</METHOD>
+                        <METHOD>voucher_cancelled:$iscancelled</METHOD>
+                        <METHOD>Credflow_GSTREGISTRATION:$GSTREGISTRATION</METHOD>
+                        <METHOD>Credflow_CMPGSTIN:$CMPGSTIN</METHOD>
+                        <METHOD>Credflow_CMPGSTREGISTRATIONTYPE:$CMPGSTREGISTRATIONTYPE</METHOD>
+                        <METHOD>credflow_CMPGSTSTATE:$CMPGSTSTATE</METHOD>
+                        <METHOD>credflow_contra_instrument_date:$LedgerEntries.BankAllocations.instrumentdate</METHOD>
+                        <METHOD>credflow_contra_transaction_type:$LedgerEntries.BankAllocations.transactiontype</METHOD>
+                        <METHOD>credflow_contra_instrument_number:$LedgerEntries.BankAllocations.instrumentnumber</METHOD>
+                        <METHOD>credflow_contra_bank_name:$LedgerEntries.BankAllocations.bankname</METHOD>
+                        <METHOD>credflow_contra_payment_mode:$LedgerEntries[1,@@BankLedgerNmV].BankAllocations.paymentmode</METHOD>
+                        <NATIVEMETHOD>ledgerentries.*,bankallocations.*</NATIVEMETHOD>
+                        <PARMVAR>SVFromDate:Date:$$Date:&quot;01-04-2024&quot;</PARMVAR>
+                        <PARMVAR>SVToDate:Date:$$Date:&quot;17-12-2024&quot;</PARMVAR>
+             
+                    </COLLECTION>
+                    <COLLECTION NAME="CredFlow_loadedCompaniescoll" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <TYPE>Company</TYPE>
+                        <NATIVEMETHOD>Name,Guid</NATIVEMETHOD>
+                        <FILTERS>CompanyFilter</FILTERS>
+                        <FILTERS>CompanyNameFilter</FILTERS>
+                    </COLLECTION>
+                    <COLLECTION NAME="CredFlow_loopcontra" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                        <COLLECTIONS>CredFlow_datacoll:CredFlow_loadedCompaniescoll</COLLECTIONS>
+                    </COLLECTION>
+                        
+                        <SYSTEM TYPE="Formulae" NAME="CompanyFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$guid):&quot;4509d400-0436-11dd-849a-efd9bcbd9570&quot;   </SYSTEM>
+                        <SYSTEM TYPE="Formulae" NAME="CompanyNameFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$name):&quot;JYOTHI CYCLE STORES-2024-2025&quot;   </SYSTEM>
+                        <SYSTEM TYPE="Formulae" NAME="AlterIdFilterNew" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No"> ($AlterId between $$Number:"309547" And $$Number:"309548")  </SYSTEM>
+                    <SYSTEM TYPE="Formulae" NAME="BankLedgerNmV" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$IsLedOfGrp:$LedgerName:$$GroupBank </SYSTEM>
+                </TDLMESSAGE>
+            </TDL>
+        </DESC>
+    </BODY>
+</ENVELOPE>

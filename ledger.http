@@ -1,0 +1,89 @@
+POST http://localhost:9000
+
+<ENVELOPE>
+    <HEADER>
+        <VERSION>1</VERSION>
+        <TALLYREQUEST>Export</TALLYREQUEST>
+        <TYPE>Data</TYPE>
+        <ID>CredFlow_CompanyWiseLedger</ID>
+    </HEADER>
+    <BODY>
+        <DESC>
+            <STATICVARIABLES>
+                <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
+            </STATICVARIABLES>
+            <TDL>  <TDLMESSAGE>
+                <REPORT NAME="CredFlow_CompanyWiseLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                <VARIABLE>SVFROMDATE,SVTODATE,SVCURRENTCOMPANY,Report Title</VARIABLE>
+                
+                    
+                            <SET>SVfromDate:$$Date:&quot;01-04-2024&quot;</SET>
+                            <SET>SVToDate:$$Date:&quot;17-12-2024&quot;</SET>
+                        
+
+                    <FORMS>CredFlow_CompanyWiseLedger</FORMS>
+                </REPORT>
+                <FORM NAME="CredFlow_CompanyWiseLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <TOPPARTS>CredFlow_CompanyWiseLedger</TOPPARTS>
+                </FORM>
+                <PART NAME="CredFlow_CompanyWiseLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <TOPLINES>CredFlow_CompanyWiseLedger</TOPLINES>
+                    <REPEAT>CredFlow_CompanyWiseLedger : CredFlow_loopLedger</REPEAT>
+                    <SCROLLED>Vertical</SCROLLED>
+                </PART>
+                <LINE NAME="CredFlow_CompanyWiseLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <LEFTFIELDS>CredFlow_ledger_GUID, CredFlow_OpeningBalance, CredFlow_ClosingBalance, CredFlow_chdr, CredFlow_cbdr</LEFTFIELDS>
+                    <XMLTAG>&quot;Ledgers&quot;</XMLTAG>
+                </LINE>
+
+                <FIELD NAME="CredFlow_ledger_GUID" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;GUID&quot;</XMLTAG>
+                    <SET>$ledger_GUID</SET>
+                </FIELD>
+
+                <FIELD NAME="CredFlow_chdr" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;IsOBDebit&quot;</XMLTAG>
+                    <SET>$chdr</SET>
+                </FIELD>
+                <FIELD NAME="CredFlow_cbdr" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;IsCBDebit&quot;</XMLTAG>
+                    <SET>$cbdr</SET>
+                </FIELD>
+                <FIELD NAME="CredFlow_ClosingBalance" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;closingbalance&quot;</XMLTAG>
+                    <SET>$closingbalance</SET>
+                </FIELD>
+                <FIELD NAME="CredFlow_OpeningBalance" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;Openingbalance&quot;</XMLTAG>
+                    <SET>$openingbalance</SET>
+                </FIELD>
+
+                <COLLECTION NAME="CredFlow_loopLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <COLLECTIONS>CredFlow_datacoll:CredFlow_loadedCompaniescoll</COLLECTIONS>
+                </COLLECTION>
+                <COLLECTION NAME="CredFlow_datacoll" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <TYPE>Ledger</TYPE>
+                    <BELONGSTO>Yes</BELONGSTO>
+                    <METHOD>ledger_GUID:$guid</METHOD>
+                    <METHOD>openingbalance:$openingbalance</METHOD>
+                    <METHOD>closingbalance:$closingbalance</METHOD>
+                    <METHOD>chdr:If $$IsDr:$openingbalance=&quot;Yes&quot; then &quot;Yes&quot; else &quot;No&quot;</METHOD>
+                    <METHOD>cbdr:If $$IsDr:$closingbalance=&quot;Yes&quot; then &quot;Yes&quot; else &quot;No&quot;</METHOD>
+                    <PARMVAR>SVFromDate:Date:$$Date:&quot;01-04-2024&quot;</PARMVAR>
+                    <PARMVAR>SVToDate:Date:$$Date:&quot;17-12-2024&quot;</PARMVAR>
+                    
+                </COLLECTION>
+                <COLLECTION NAME="CredFlow_loadedCompaniescoll" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <TYPE>Company</TYPE>
+                    <NATIVEMETHOD>Name,Guid</NATIVEMETHOD>
+                    <FILTERS>CompanyFilter</FILTERS>
+                    <FILTERS>CompanyNameFilter</FILTERS>
+                </COLLECTION>
+                
+                <SYSTEM TYPE="Formulae" NAME="CompanyFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$guid):&quot;4509d400-0436-11dd-849a-efd9bcbd9570&quot;   </SYSTEM>
+                <SYSTEM TYPE="Formulae" NAME="CompanyNameFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$name):&quot;JYOTHI CYCLE STORES-2024-2025&quot;   </SYSTEM>
+            </TDLMESSAGE>
+            </TDL>
+        </DESC>
+    </BODY>
+</ENVELOPE>
