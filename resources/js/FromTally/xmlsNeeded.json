@@ -3,5 +3,8 @@
     "ledgersSimple": "Tally/xml/ledgersSimple.xml",
     "StockCategory": "Tally/xml/StockCategory.xml",
     "StockGroups": "Tally/xml/StockGroups.xml",
-    "TransactionsSales": "Tally/xml/Transactions/Sales.xml"
+    "TransactionsSales": "Tally/xml/Transactions/Sales.xml",
+    "Transactions": {
+        "SalesWithBatches": "Tally/xml/Transactions/SalesWithBatch.xml"
+    }
 }
