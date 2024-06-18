@@ -1,5 +1,5 @@
 let StartFunc = (event) => {
-
+  jFLocalChangeIcon();
   //my ipaddress
   GetMyAddress()
     .then((ip) => {
@@ -26,9 +26,10 @@ let StartFunc = (event) => {
     });
 };
 
-let jFLocalChangeColour = () => {
-  document.getElementById("UserNameId").style.color = "green";
+let jFLocalChangeIcon = () => {
+  const k1 = document.getElementById("MastersUseId");
 
+  k1.setAttribute("xlink:href", "#wifi");
 };
 
 let GetMyAddress = async () => {

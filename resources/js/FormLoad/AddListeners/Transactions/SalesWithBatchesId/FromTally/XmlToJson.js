@@ -1,40 +1,8 @@
-import xmlsNeededJson from '../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 import ColumnsJson from '../columns.json' with {type: 'json'};
-import { StartFunc as StartFuncXmlToJson } from "./XmlToJson.js";
 
 const CommonParentTagName = "SALES";
 
-let StartFunc = async () => {
-    let jVarLocalXml = await jFLocalGetXml();
-
-    let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
-
-    let jVarLocalItemsJson = StartFuncXmlToJson({ inXmlFromTally: jVarLocalItemData });
-
-    localStorage.setItem("tableArray", JSON.stringify(jVarLocalItemsJson));
-};
-
-let FromTally = async ({ inXml }) => {
-    const config = {
-        method: 'POST',
-        body: inXml
-    };
-
-    let r2 = await fetch("http://localhost:9000/", config);
-    let d2 = await r2.text();
-    // console.log("jVarLocalData /; ", d2);
-    return d2;
-};
-
-let jFLocalGetXml = async () => {
-    let jVarLocalUrl = xmlsNeededJson.Transactions.SalesWithBatches;
-
-    let jVarLocalResponse = await fetch(jVarLocalUrl);
-    let jVarLocalData = await jVarLocalResponse.text();
-    return jVarLocalData;
-};
-
-const jFLocalXmlToJson = ({ inXmlFromTally }) => {
+const StartFunc = ({ inXmlFromTally }) => {
     let jVarLocalItemsXml = inXmlFromTally;
     let ReturnArray = [];
 
@@ -83,11 +51,15 @@ let jFLocalReturnValue = ({ inKeyName, inValueName, inTemplateControl }) => {
     let LocalTagName = inKeyName;
     let LocalTemplateControl = inTemplateControl;
 
-    let LoopInsideName = LocalTemplateControl.querySelector(LocalTagName);
+    let jVarLocalFindTags = LocalTemplateControl.querySelectorAll(LocalTagName);
     let LoopReturnObject = {};
 
-    if (LoopInsideName === null === false) {
-        LoopReturnObject[inValueName] = LoopInsideName.innerHTML;
+    if (jVarLocalFindTags.length === 1) {
+        LoopReturnObject[inValueName] = jVarLocalFindTags[0].innerHTML;
+    };
+
+    if (jVarLocalFindTags.length > 1) {
+        LoopReturnObject[inValueName] = jVarLocalFindTags;
     };
 
     return LoopReturnObject;

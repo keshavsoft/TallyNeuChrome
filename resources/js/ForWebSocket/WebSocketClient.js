@@ -28,7 +28,7 @@ let jFLocalEstablishWebSocket = () => {
 
     webSocket.onclose = function (e) {
         console.log("Socket is closed. Reconnect will be attempted in 1 second.");
-        document.getElementById("UserNameId").style.color = "red";
+        // document.getElementById("UserNameId").style.color = "red";
     };
 };
 
