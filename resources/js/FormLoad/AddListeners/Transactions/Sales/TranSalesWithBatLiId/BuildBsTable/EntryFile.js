@@ -1,4 +1,6 @@
 import { StartFunc as StartFuncTableTag } from "./TableTag.js";
+import { StartFunc as onExpandRow } from "./onExpandRow/EntryFile.js";
+import IconsJson from './icons.json' with {type: 'json'};
 import ColumnsJson from '../columns.json' with {type: 'json'};
 const tableName = "tableBS";
 
@@ -10,10 +12,13 @@ const StartFunc = () => {
 const jFLocalInitialize = () => {
     var $table = $(`#${tableName}`);
     let jVarLocalData = localStorage.getItem("tableArray");
-
+    console.log("IconsJson : ", IconsJson);
     $table.bootstrapTable("destroy").bootstrapTable({
         data: JSON.parse(jVarLocalData),
-        columns: ColumnsJson
+        columns: ColumnsJson,
+        onExpandRow,
+        icons: IconsJson,
+        detailView: true
     });
 };
 
