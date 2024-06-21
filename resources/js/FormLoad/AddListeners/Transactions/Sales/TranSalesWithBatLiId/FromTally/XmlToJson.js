@@ -62,9 +62,8 @@ let jFLocalReturnValue = ({ inKeyName, inValueName, inTemplateControl }) => {
         LoopReturnObject[inValueName] = [];
 
         jVarLocalFindTags.forEach(element => {
-            LoopReturnObject[inValueName].push(element);
+            LoopReturnObject[inValueName].push(element.innerHTML);
         });
-        // LoopReturnObject[inValueName] = jVarLocalFindTags;
     };
 
     return LoopReturnObject;

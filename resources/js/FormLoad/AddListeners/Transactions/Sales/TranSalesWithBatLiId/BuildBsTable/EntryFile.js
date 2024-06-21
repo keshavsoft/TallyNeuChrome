@@ -14,11 +14,11 @@ const jFLocalInitialize = () => {
     let jVarLocalData = localStorage.getItem("tableArray");
     console.log("IconsJson : ", IconsJson);
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: JSON.parse(jVarLocalData),
-        columns: ColumnsJson,
         onExpandRow,
         icons: IconsJson,
-        detailView: true
+        detailView: true,
+        data: JSON.parse(jVarLocalData),
+        columns: ColumnsJson
     });
 };
 

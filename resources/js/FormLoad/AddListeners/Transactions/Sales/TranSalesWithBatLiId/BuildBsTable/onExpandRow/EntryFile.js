@@ -7,8 +7,8 @@ let StartFunc = (index, row, $detail) => {
     // const s = new XMLSerializer();
     // const str = s.serializeToString(clone);
 
-    let jVarLocalInsideTable = $detail.html(str).find('table');
-
+    let jVarLocalInsideTable = $detail.html("<table></table>").find('table');
+    console.log("row : ", row);
     jVarLocalInsideTable.bootstrapTable({
         data: [],
         columns: [{
