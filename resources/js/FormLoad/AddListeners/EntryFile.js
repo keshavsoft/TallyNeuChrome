@@ -15,6 +15,7 @@ let StartFunc = () => {
     StartFuncSendId();
     StartFuncSalesId();
     StartFuncTransactionsLiId();
+    
     StartFuncTransactions();
 };
 

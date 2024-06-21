@@ -5,6 +5,9 @@
     "StockGroups": "Tally/xml/StockGroups.xml",
     "TransactionsSales": "Tally/xml/Transactions/Sales.xml",
     "Transactions": {
-        "SalesWithBatches": "Tally/xml/Transactions/SalesWithBatch.xml"
+        "SalesWithBatches": "Tally/xml/Transactions/SalesWithBatch.xml",
+        "Sales": {
+            "BatchDate": "Tally/xml/Transactions/Sales/BatchDate.xml"
+        }
     }
 }

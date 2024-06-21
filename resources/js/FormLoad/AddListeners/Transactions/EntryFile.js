@@ -5,6 +5,7 @@ import { StartFunc as Sales } from "./Sales/EntryFile.js";
 let StartFunc = () => {
     StartFuncSalesWithBatchesId();
     TranSalesAId();
+    
     Sales();
 };
 

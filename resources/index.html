@@ -40,7 +40,7 @@
             font-size: 24px;
             line-height: 1.33;
         }
-        
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -249,7 +249,7 @@
                             </svg>
                         </a>
 
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <ul id="MainUlId" class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                             <li>
                                 <a href="#" class="nav-link text-secondary">
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
@@ -307,12 +307,69 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <ul id="TranUlId" style="display: none;"
+                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a href="#" class="nav-link text-white" id="TranSalesAId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    Sales
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="nav-link text-white" id="SalesId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    SalesSimple
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white" id="SalesWithBatchesId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    SalesWithBatchesId
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white" id="SendId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    SendToServer
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul id="TranSalesUlId" style="display: none;"
+                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a href="#" class="nav-link text-white" id="TranSalesWithBatLiId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    WithBatches
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white" id="TranSalesWithBatchDateLiId">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#people-circle" />
+                                    </svg>
+                                    WithBatchDate
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
 
-        <header class="mb-3" id="TransactionsHeaderId" style="display: none;">
+        <!-- <header class="mb-3" id="TransactionsHeaderId" style="display: none;">
             <div class="px-3 py-2 text-bg-dark border-bottom">
                 <div class="container">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -387,7 +444,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> -->
 
         <div class="container">
             <div class="spinner-border" id="SpinnerId" role="status" style="display: none;">
@@ -397,6 +454,50 @@
                 <div class="col">
                     <table id="tableBS" data-pagination="true" data-toolbar="#toolbar" data-search="true">
                     </table>
+                </div>
+            </div>
+
+            <div class="row" id="DatesCard" style="display: none;">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+
+                                <div class="col-md-2">
+                                    <label for="FromDateId" class="form-label">From Date</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" id="FromDateId">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="ToDateId" class="form-label">To Date</label>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" id="ToDateId">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary" id="TranSalesWithBatchDateDownloadId">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                            <path
+                                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                                            <path
+                                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                                        </svg>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table id="tableWithDateBS">
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
