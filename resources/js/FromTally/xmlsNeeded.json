@@ -9,5 +9,10 @@
         "Sales": {
             "BatchDate": "Tally/xml/Transactions/Sales/BatchDate.xml"
         }
+    },
+    "Masters": {
+        "Items": {
+            "ItemsSimple": "Tally/xml/itemsSimple.xml"
+        }
     }
 }

@@ -6,6 +6,7 @@ import { StartFunc as StartFuncSendId } from "./SendId/EntryFile.js";
 import { StartFunc as StartFuncSalesId } from "./SalesId/EntryFile.js";
 import { StartFunc as StartFuncTransactionsLiId } from "./TransactionsLiId/EntryFile.js";
 import { StartFunc as StartFuncTransactions } from "./Transactions/EntryFile.js";
+import { StartFunc as Masters } from "./Masters/EntryFile.js";
 
 let StartFunc = () => {
     StartFuncItemsId();
@@ -17,6 +18,7 @@ let StartFunc = () => {
     StartFuncTransactionsLiId();
     
     StartFuncTransactions();
+    Masters();
 };
 
 export { StartFunc };
