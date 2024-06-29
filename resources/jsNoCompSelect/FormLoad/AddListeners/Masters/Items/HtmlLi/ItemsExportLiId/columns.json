@@ -1,0 +1,12 @@
+[
+    {
+        "field": "ItemName",
+        "title": "ItemName",
+        "tagName": "KSSTOCKITEMNAME"
+    },
+    {
+        "field": "Rate",
+        "title": "Rate",
+        "tagName": "KSSTOCKCLOSINGRATE"
+    }
+]

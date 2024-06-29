@@ -1,0 +1,42 @@
+[
+    {
+        "field": "VoucherType",
+        "title": "VoucherType",
+        "tagName": "VOUCHERTYPE"
+    },
+    {
+        "field": "VoucherNumber",
+        "title": "VoucherNumber",
+        "tagName": "VOUCHERNUMBER"
+    },
+    {
+        "field": "PartyName",
+        "title": "PartyName",
+        "tagName": "PARTYNAME"
+    },
+    {
+        "field": "ItemName",
+        "title": "ItemName",
+        "tagName": "STOCKITEMNAME"
+    },
+    {
+        "field": "Rate",
+        "title": "Rate",
+        "tagName": "ITEMRATE"
+    },
+    {
+        "field": "Amount",
+        "title": "Amount",
+        "tagName": "ITEMAMOUNT"
+    },
+    {
+        "field": "Qty",
+        "title": "Qty",
+        "tagName": "ITEMACTUALQUANTITY"
+    },
+    {
+        "field": "BatchDetails",
+        "title": "BatchDetails",
+        "tagName": "BATCHDETAILS"
+    }
+]
