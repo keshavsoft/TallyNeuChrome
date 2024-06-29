@@ -1,4 +1,4 @@
-import xmlsNeededJson from '../../../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
+import xmlsNeededJson from '../../../../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 
 let StartFunc = async () => {
     let jVarLocalUrl = xmlsNeededJson.Transactions.Sales.BatchDate;

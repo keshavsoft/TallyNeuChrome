@@ -1,4 +1,4 @@
-import xmlsNeededJson from '../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
+import xmlsNeededJson from '../../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 import { StartFunc as StartFuncXmlToJson } from "./XmlToJson.js";
 
 let StartFunc = async () => {

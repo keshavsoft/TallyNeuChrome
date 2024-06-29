@@ -1,9 +1,10 @@
-import { StartFunc as TranSalesWithBatchDateLiId } from "./TranSalesWithBatchDateLiId/EntryFile.js";
-import { StartFunc as TranSalesWithBatLiId } from "./TranSalesWithBatLiId/EntryFile.js";
+import { StartFunc as TranSalesBackLiId } from "./TranSalesBackLiId/EntryFile.js";
+import { StartFunc as HtmlLi } from "./HtmlLi/EntryFile.js";
 
 let StartFunc = () => {
-    TranSalesWithBatchDateLiId();
-    TranSalesWithBatLiId();
+    TranSalesBackLiId();
+    
+    HtmlLi();
 };
 
 export { StartFunc };
