@@ -2,7 +2,6 @@ import { StartFunc as StartFuncBuildBsTable } from "./BuildBsTable/EntryFile.js"
 import { StartFunc as FromTally } from "./FromTally/EntryFile.js";
 
 const tableName = "tableBS";
-const CommonLocalStorageKey = "";
 
 let StartFunc = async () => {
     StartFuncBuildBsTable();
