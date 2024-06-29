@@ -5,8 +5,10 @@ let StartFunc = async () => {
 
     let jVarLocalResponse = await fetch(jVarLocalUrl);
     let jVarLocalData = await jVarLocalResponse.text();
+    
+    let jVarLocalAfterReplace = jVarLocalData.replace("KeshavSoft_CompanyName", "KeshavSoft");
 
-    return jVarLocalData;
+    return jVarLocalAfterReplace;
 };
 
 export { StartFunc };

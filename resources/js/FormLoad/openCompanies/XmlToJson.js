@@ -1,6 +1,6 @@
-import ColumnsJson from '../columns.json' with {type: 'json'};
+import ColumnsJson from './columns.json' with {type: 'json'};
 
-const CommonParentTagName = "LEDGERS";
+const CommonParentTagName = "COMPANIES";
 
 const StartFunc = ({ inXmlFromTally }) => {
     let jVarLocalItemsXml = inXmlFromTally;

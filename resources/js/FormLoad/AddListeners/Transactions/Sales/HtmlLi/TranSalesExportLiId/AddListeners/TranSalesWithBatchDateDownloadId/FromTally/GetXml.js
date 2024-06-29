@@ -9,7 +9,7 @@ let StartFunc = async () => {
 
     let jVarLocalChangeFromDate = jVarLocalData.replace("KeshavSoft_FromDate", jVarLocalFromDate.split("-").reverse().join("-"));
     let jVarLocalChangeToDate = jVarLocalChangeFromDate.replace("KeshavSoft_ToDate", jVarLocalToDate.split("-").reverse().join("-"));
-    console.log("lllllllll : ", jVarLocalFromDate, jVarLocalToDate, jVarLocalChangeToDate);
+    // console.log("lllllllll : ", jVarLocalFromDate, jVarLocalToDate, jVarLocalChangeToDate);
 
     return jVarLocalChangeToDate;
 };
