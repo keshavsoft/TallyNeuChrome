@@ -1,0 +1,108 @@
+POST http://localhost:9000
+
+<ENVELOPE>
+	<HEADER>
+		<VERSION>1</VERSION>
+		<TALLYREQUEST>Export</TALLYREQUEST>
+		<TYPE>Data</TYPE>
+		<ID>CredFlow_CompanyReport</ID>
+	</HEADER>
+	<BODY>
+		<DESC>
+			<STATICVARIABLES>
+				<SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
+			</STATICVARIABLES>
+			<TDL>
+				<TDLMESSAGE>
+					<REPORT NAME="CredFlow_CompanyReport" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<FORMS>CredFlow_CompanyForm</FORMS>
+					</REPORT>
+					<FORM NAME="CredFlow_CompanyForm" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<TOPPARTS>CredFlow_CompanyPart</TOPPARTS>
+					</FORM>
+					<PART NAME="CredFlow_CompanyPart" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<TOPLINES>CredFlow_CompanyLine</TOPLINES>
+						<REPEAT>CredFlow_CompanyLine: CredFlow_CompanyMasters</REPEAT>
+						<SCROLLED>Vertical</SCROLLED>
+					</PART>
+					<LINE NAME="CredFlow_CompanyLine" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<LEFTFIELDS>CredFlow_company_name</LEFTFIELDS>
+						<XMLTAG>&quot;Companies&quot;</XMLTAG>
+					</LINE>
+					<FIELD NAME="CredFlow_state" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;State&quot;</XMLTAG>
+						<SET>$statename</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_address" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Address&quot;</XMLTAG>
+						<SET>$$FullListEx:&quot;;&quot;:address:$address</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_pincode" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Pincode&quot;</XMLTAG>
+						<SET>$pincode</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_CompanyBooksFrom" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;booksFrom&quot;</XMLTAG>
+						<SET>$booksfrom</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_Country" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Country&quot;</XMLTAG>
+						<SET>$countryname</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_Mobile" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;mobile&quot;</XMLTAG>
+						<SET>$mobilenumbers</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_formal_name" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company Formal name&quot;</XMLTAG>
+						<SET>$basiccompanyformalname</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_phone" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;phone&quot;</XMLTAG>
+						<SET>$phonenumber</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_fax" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;fax&quot;</XMLTAG>
+						<SET>$faxnumber</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_email" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company email&quot;</XMLTAG>
+						<SET>$email</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_website" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company Website&quot;</XMLTAG>
+						<SET>$website</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_last_voucher_date" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company Last Voucher Date&quot;</XMLTAG>
+						<SET>$lastvoucherdate</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_guid" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company Guid&quot;</XMLTAG>
+						<SET>$guid</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_company_name" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;Company&quot;</XMLTAG>
+						<SET>$name</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_cmpvchalterid" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;cmpvchalterid&quot;</XMLTAG>
+						<SET>$altvchid</SET>
+					</FIELD>
+					<FIELD NAME="CredFlow_altmasterid" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<XMLTAG>&quot;altMasterId&quot;</XMLTAG>
+						<SET>$altmstid</SET>
+					</FIELD>
+					<COLLECTION NAME="CredFlow_CompanyMasters" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+						<TYPE>company</TYPE>
+						<BELONGSTO>Yes</BELONGSTO>
+
+
+					</COLLECTION>
+
+
+				</TDLMESSAGE>
+			</TDL>
+		</DESC>
+	</BODY>
+</ENVELOPE>

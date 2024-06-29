@@ -3,7 +3,7 @@ import { StartFunc as HtmlLi } from "./HtmlLi/EntryFile.js";
 
 let StartFunc = () => {
     TranSalesBackLiId();
-    
+
     HtmlLi();
 };
 
