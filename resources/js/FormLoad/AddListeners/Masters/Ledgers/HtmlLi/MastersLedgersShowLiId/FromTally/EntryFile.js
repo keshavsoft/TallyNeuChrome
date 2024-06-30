@@ -3,7 +3,7 @@ import { StartFunc as GetXml } from "./GetXml.js";
 
 let StartFunc = async () => {
     let jVarLocalXml = await GetXml();
-    console.log("bbbbbbbbbbbbb : ", jVarLocalXml);
+    // console.log("bbbbbbbbbbbbb : ", jVarLocalXml);
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
 
     let jVarLocalItemsJson = StartFuncXmlToJson({ inXmlFromTally: jVarLocalItemData });
