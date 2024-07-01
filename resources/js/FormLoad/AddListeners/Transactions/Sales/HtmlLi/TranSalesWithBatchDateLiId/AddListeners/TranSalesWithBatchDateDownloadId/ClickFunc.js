@@ -9,9 +9,8 @@ let StartFunc = async () => {
 const jFLocalInitialize = () => {
     var $table = $(`#${tableName}`);
     let jVarLocalData = localStorage.getItem("tableArray");
-    console.log("aaaaaaa : ", JSON.parse(jVarLocalData));
+
     $table.bootstrapTable("load", JSON.parse(jVarLocalData));
 };
-
 
 export { StartFunc };
