@@ -1,3 +1,5 @@
+POST http://localhost:9000
+
 <ENVELOPE>
     <HEADER>
         <VERSION>1</VERSION>
