@@ -1,0 +1,12 @@
+[
+    {
+        "field": "LedgerName",
+        "title": "LedgerName",
+        "tagName": "LEDGERNAME"
+    },
+    {
+        "field": "Guid",
+        "title": "Guid",
+        "tagName": "GUID"
+    }
+]
