@@ -1,12 +1,22 @@
-import xmlsNeededJson from '../../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
-
 let StartFunc = async () => {
-    let jVarLocalUrl = xmlsNeededJson.Masters.Items.ItemsSimple;
+    let jVarLocalUrl = "Tally/xml/SelectCompany/Masters/Items/simple.xml";
 
     let jVarLocalResponse = await fetch(jVarLocalUrl);
     let jVarLocalData = await jVarLocalResponse.text();
+    let jVarLocalCompanyName = jFLocalSelectCompanyId();
 
-    return jVarLocalData;
+    let jVarLocalAfterReplace = jVarLocalData.replace("KeshavSoft_CompanyName", jVarLocalCompanyName);
+
+    return jVarLocalAfterReplace;
+};
+
+let jFLocalSelectCompanyId = () => {
+    let jVarLocalSelectCompanyId = 'SelectCompanyId'
+    let jVarLocalHtmlId = document.getElementById(jVarLocalSelectCompanyId);
+
+    if (jVarLocalHtmlId === null === false) {
+        return jVarLocalHtmlId.value.trim();
+    };
 };
 
 export { StartFunc };

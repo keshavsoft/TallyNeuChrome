@@ -23,13 +23,18 @@ POST http://localhost:9000
                         <SCROLLED>Vertical</SCROLLED>
                     </PART>
                     <LINE NAME="CredFlow_CompanyWiseLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
-                        <LEFTFIELDS>CredFlow_ledger_name</LEFTFIELDS>
+                        <LEFTFIELDS>CredFlow_ledger_name,CredFlow_ledger_GUID</LEFTFIELDS>
                         <XMLTAG>&quot;Ledgers&quot;</XMLTAG>
                     </LINE>
                     <FIELD NAME="CredFlow_ledger_name" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
                         <XMLTAG>&quot;LedgerName&quot;</XMLTAG>
                         <SET>$ledger_name</SET>
                     </FIELD>
+<FIELD NAME="CredFlow_ledger_GUID" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
+                    <XMLTAG>&quot;id&quot;</XMLTAG>
+                    <SET>$ledger_guid</SET>
+                </FIELD>
+
 
                     <COLLECTION NAME="CredFlow_loopLedger" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
                         <COLLECTIONS>CredFlow_datacoll:CredFlow_loadedCompaniescoll</COLLECTIONS>
@@ -38,6 +43,7 @@ POST http://localhost:9000
                         <TYPE>Ledger</TYPE>
                         <BELONGSTO>Yes</BELONGSTO>
                         <METHOD>ledger_name:$name</METHOD>
+                         <METHOD>ledger_GUID:$GUID</METHOD>
                     </COLLECTION>
                     <COLLECTION NAME="CredFlow_loadedCompaniescoll" ISMODIFY="No" ISFIXED="No" ISINITIALIZE="No" ISOPTION="No" ISINTERNAL="No">
                         <TYPE>Company</TYPE>

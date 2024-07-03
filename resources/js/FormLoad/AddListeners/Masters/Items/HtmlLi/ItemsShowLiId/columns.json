@@ -2,11 +2,6 @@
     {
         "field": "ItemName",
         "title": "Item Name",
-        "tagName": "KSSTOCKITEMNAME"
-    },
-    {
-        "field": "Rate",
-        "title": "Closing Rate",
-        "tagName": "KSSTOCKCLOSINGRATE"
+        "tagName": "ITEMNAME"
     }
 ]

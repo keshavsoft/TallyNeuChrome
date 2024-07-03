@@ -1,7 +1,6 @@
 {
     "tableAttributes": {
         "data-toolbar": "#toolbar",
-        "data-pagination": "true",
         "data-search": "true",
         "data-searchable": "true",
         "data-show-footer": "true",
