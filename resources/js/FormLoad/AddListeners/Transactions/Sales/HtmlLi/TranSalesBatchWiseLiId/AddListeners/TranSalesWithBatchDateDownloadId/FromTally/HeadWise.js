@@ -90,8 +90,6 @@ let jFLocalReturnValue = ({ inKeyName, inValueName, inTemplateControl }) => {
             LoopReturnObject[inValueName].push(LoopEachBatchItem);
         });
     };
-    console.log("aaaaaa  : ", LoopReturnObject);
-
 
     return LoopReturnObject;
 };

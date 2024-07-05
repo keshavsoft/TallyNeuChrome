@@ -2,19 +2,22 @@ import { StartFunc as HeadWise } from "./HeadWise.js";
 
 const StartFunc = ({ inXmlFromTally }) => {
     let jVarLocalHeadWise = HeadWise({ inXmlFromTally });
+    let jVarLocalBatchWiseArray = [];
 
-    // jVarLocalHeadWise.forEach(element => {
-    //     let LoopInsideBatches = element.BatchDetails.toString().split(",");
-
-    //     LoopInsideBatches.forEach(LoopBatch => {
-    //         const parser = new DOMParser();
-    //         const doc = parser.parseFromString(LoopBatch.replaceAll("&#4;", ""), "text/xml");
-
-    //         console.log("doc : ", LoopBatch.replaceAll("&#4;", ""), doc);
-    //     });
-    // });
-
-    return jVarLocalHeadWise;
+    jVarLocalHeadWise.forEach(element => {
+        if ("BatchDetails" in element) {
+            if (Array.isArray(element.BatchDetails)) {
+                element.BatchDetails.forEach(LoopBatch => {
+                    jVarLocalBatchWiseArray.push({
+                        ...element,
+                        ...LoopBatch
+                    });
+                });
+            };
+        };
+    });
+    console.log("jVarLocalHeadWise------- : ", jVarLocalBatchWiseArray);
+    return jVarLocalBatchWiseArray;
 };
 
 export { StartFunc };

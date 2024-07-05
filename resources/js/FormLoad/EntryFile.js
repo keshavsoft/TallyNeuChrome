@@ -6,7 +6,6 @@ let StartFunc = () => {
     StartFuncAddListeners();
     StartFuncCheckTally().then();
     openCompanies().then(() => {
-
         document.getElementById("TranSalesBatchWiseLiId").click();
     });
 };

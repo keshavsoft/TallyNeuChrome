@@ -17,26 +17,41 @@
     {
         "field": "ItemName",
         "title": "ItemName",
-        "tagName": "STOCKITEMNAME"
+        "tagName": "STOCKITEMNAME",
+        "visible": false
     },
     {
         "field": "Rate",
         "title": "Rate",
-        "tagName": "ITEMRATE"
+        "tagName": "ITEMRATE",
+        "visible": false
     },
     {
         "field": "Amount",
         "title": "Amount",
-        "tagName": "ITEMAMOUNT"
+        "tagName": "ITEMAMOUNT",
+        "visible": false
     },
     {
         "field": "Qty",
         "title": "Qty",
-        "tagName": "ITEMACTUALQUANTITY"
+        "tagName": "ITEMACTUALQUANTITY",
+        "visible": false
     },
     {
         "field": "BatchDetails",
         "title": "BatchDetails",
-        "tagName": "BATCHDETAILS"
+        "tagName": "BATCHDETAILS",
+        "visible": false
+    },
+    {
+        "field": "BatchItem",
+        "title": "BatchItem",
+        "tagName": "BatchItem"
+    },
+    {
+        "field": "BatchName",
+        "title": "BatchName",
+        "tagName": "BatchName"
     }
 ]
