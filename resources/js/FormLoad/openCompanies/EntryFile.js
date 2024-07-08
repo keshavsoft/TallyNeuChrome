@@ -4,9 +4,11 @@ import { StartFunc as FromTally } from "./FromTally.js";
 let StartFunc = async () => {
     let jVarLocalTallyStatus = await FromTally();
 
-    let jVarLocalJson = XmlToJson({ inXmlFromTally: jVarLocalTallyStatus });
+    if (jVarLocalTallyStatus.status === 200) {
+        let jVarLocalJson = XmlToJson({ inXmlFromTally: jVarLocalTallyStatus.text() });
 
-    jFLocalToSelect({ inJsonArray: jVarLocalJson });
+        jFLocalToSelect({ inJsonArray: jVarLocalJson });
+    };
 };
 
 let jFLocalToSelect = ({ inJsonArray }) => {

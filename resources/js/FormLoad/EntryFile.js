@@ -4,10 +4,12 @@ import { StartFunc as openCompanies } from "./openCompanies/EntryFile.js";
 
 let StartFunc = () => {
     StartFuncAddListeners();
-    StartFuncCheckTally().then();
-    openCompanies().then(() => {
-        // document.getElementById("TranSalesBatchWiseLiId").click();
+    StartFuncCheckTally().then(() => {
+        openCompanies().then(() => {
+            // document.getElementById("TranSalesBatchWiseLiId").click();
+        });
     });
+
 };
 
 export { StartFunc };
