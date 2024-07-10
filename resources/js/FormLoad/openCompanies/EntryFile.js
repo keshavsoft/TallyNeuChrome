@@ -5,7 +5,8 @@ let StartFunc = async () => {
     let jVarLocalTallyStatus = await FromTally();
 
     if (jVarLocalTallyStatus.status === 200) {
-        let jVarLocalJson = XmlToJson({ inXmlFromTally: jVarLocalTallyStatus.text() });
+        let jVarLocalResponseText = await jVarLocalTallyStatus.text()
+        let jVarLocalJson = XmlToJson({ inXmlFromTally: jVarLocalResponseText });
 
         jFLocalToSelect({ inJsonArray: jVarLocalJson });
     };
