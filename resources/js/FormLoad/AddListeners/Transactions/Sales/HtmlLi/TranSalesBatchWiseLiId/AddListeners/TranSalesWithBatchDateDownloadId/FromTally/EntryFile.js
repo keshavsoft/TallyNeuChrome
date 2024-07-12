@@ -7,8 +7,8 @@ let StartFunc = async () => {
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
 
     let jVarLocalItemsJson = StartFuncXmlToJson({ inXmlFromTally: jVarLocalItemData });
-
-    localStorage.setItem("tableArray", JSON.stringify(jVarLocalItemsJson));
+    return jVarLocalItemsJson;
+    // localStorage.setItem("tableArray", JSON.stringify(jVarLocalItemsJson));
 };
 
 let FromTally = async ({ inXml }) => {

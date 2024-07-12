@@ -10,14 +10,23 @@ const StartFunc = () => {
 
 const jFLocalInitialize = () => {
     var $table = $(`#${tableName}`);
-    // let jVarLocalData = localStorage.getItem("tableArray");
 
     $table.bootstrapTable("destroy").bootstrapTable({
         icons: IconsJson,
         detailView: true,
         data: [],
-        columns: ColumnsJson
+        columns: jFLocalGetVisibleColumns()
     });
+};
+
+const jFLocalGetVisibleColumns = () => {
+    let jVarLocalAllColumns = ColumnsJson;
+
+    let jVarVisibleColumns = jVarLocalAllColumns.filter(element => {
+        return ("visible" in element) === false || element.visible;
+    });
+    console.log("jVarVisibleColumns : ", jVarVisibleColumns);
+    return jVarVisibleColumns;
 };
 
 export { StartFunc };

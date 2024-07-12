@@ -6,7 +6,6 @@
         "data-searchable": "true",
         "data-show-columns": "true",
         "data-show-columns-toggle-all": "true",
-        "data-click-to-select": "true",
         "data-filter-control": "true",
         "data-show-export": "true",
         "data-id-field": "pk"
