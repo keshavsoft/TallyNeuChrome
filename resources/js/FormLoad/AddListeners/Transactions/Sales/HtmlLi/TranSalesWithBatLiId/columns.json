@@ -15,28 +15,13 @@
         "tagName": "PARTYNAME"
     },
     {
-        "field": "ItemName",
-        "title": "ItemName",
-        "tagName": "STOCKITEMNAME"
+        "field": "LEDGERNAME",
+        "title": "LEDGERNAME",
+        "tagName": "LEDGERNAME"
     },
     {
-        "field": "Rate",
-        "title": "Rate",
-        "tagName": "ITEMRATE"
-    },
-    {
-        "field": "Amount",
-        "title": "Amount",
-        "tagName": "ITEMAMOUNT"
-    },
-    {
-        "field": "Qty",
-        "title": "Qty",
-        "tagName": "ITEMACTUALQUANTITY"
-    },
-    {
-        "field": "BatchDetails",
-        "title": "BatchDetails",
-        "tagName": "BATCHDETAILS"
+        "field": "LEDGER_AMOUNT",
+        "title": "LEDGER_AMOUNT",
+        "tagName": "LEDGER_AMOUNT"
     }
 ]

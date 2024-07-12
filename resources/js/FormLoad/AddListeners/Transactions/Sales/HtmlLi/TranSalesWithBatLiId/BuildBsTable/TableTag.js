@@ -1,5 +1,5 @@
 import AttributesJson from './Attributes.json' with { type: "json" };
-const tableName = "tableBS";
+const tableName = "tableWithDateBS";
 
 const StartFunc = () => {
     var $table = $(`#${tableName}`);

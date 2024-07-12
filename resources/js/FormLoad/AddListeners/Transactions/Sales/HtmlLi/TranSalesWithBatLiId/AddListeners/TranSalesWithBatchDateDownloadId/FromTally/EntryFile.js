@@ -1,14 +1,14 @@
-import xmlsNeededJson from '../../../../../../../FromTally/xmlsNeeded.json' with {type: 'json'};
 import { StartFunc as StartFuncXmlToJson } from "./XmlToJson.js";
+import { StartFunc as GetXml } from "./GetXml.js";
 
 let StartFunc = async () => {
-    let jVarLocalXml = await jFLocalGetXml();
+    let jVarLocalXml = await GetXml();
 
     let jVarLocalItemData = await FromTally({ inXml: jVarLocalXml });
 
     let jVarLocalItemsJson = StartFuncXmlToJson({ inXmlFromTally: jVarLocalItemData });
 
-    localStorage.setItem("tableArray", JSON.stringify(jVarLocalItemsJson));
+    return jVarLocalItemsJson;
 };
 
 let FromTally = async ({ inXml }) => {
@@ -21,14 +21,6 @@ let FromTally = async ({ inXml }) => {
     let d2 = await r2.text();
     // console.log("jVarLocalData /; ", d2);
     return d2;
-};
-
-let jFLocalGetXml = async () => {
-    let jVarLocalUrl = xmlsNeededJson.Transactions.SalesWithBatches;
-
-    let jVarLocalResponse = await fetch(jVarLocalUrl);
-    let jVarLocalData = await jVarLocalResponse.text();
-    return jVarLocalData;
 };
 
 export { StartFunc };

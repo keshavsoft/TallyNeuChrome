@@ -654,7 +654,19 @@
 
     <script type="module" src="./js/EntryFile.js"></script>
     <!-- <script type="module" src="./js/ForWebSocket/WebSocketClient.js"></script> -->
+    <script>
+        function jFLocalBatchAmountTotal(data) {
+            console.log("data : ", data);
+            var field = this.field;
 
+            return '$' + data.map(function (row) {
+                console.log("aaaaa", row[field]);
+                return +row[field].substring(1)
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+        };
+    </script>
 </body>
 
 </html>

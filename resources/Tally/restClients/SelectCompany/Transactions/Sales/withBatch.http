@@ -427,8 +427,8 @@ POST http://localhost:9000
             <METHOD>KeshavSoft_IRNQRCODE:$IRNQRCODE</METHOD>
 
             <NATIVEMETHOD>ledgerentries.*, inventoryentries.*, ledgerentries.userdescription.*, basicorderterms.*, invoicedelnotes.*, invoiceorderlist.*, basicbuyeraddress.*, address.* </NATIVEMETHOD>
-            <PARMVAR>SVFromDate:Date:$$Date:&quot;01-04-2023&quot;</PARMVAR>
-            <PARMVAR>SVToDate:Date:$$Date:&quot;01-04-2023&quot;</PARMVAR>
+            <PARMVAR>SVFromDate:Date:$$Date:&quot;01-06-2024&quot;</PARMVAR>
+            <PARMVAR>SVToDate:Date:$$Date:&quot;01-06-2024&quot;</PARMVAR>
 
 
           </COLLECTION>
@@ -566,7 +566,7 @@ POST http://localhost:9000
             <AggrCompute> CessVal: Sum: $CessVal</AggrCompute>
           </COLLECTION>
 
-          <SYSTEM TYPE="Formulae" NAME="CompanyNameFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$name):&quot;JYOTHI CYCLE STORES-2023-2024&quot;   </SYSTEM>
+          <SYSTEM TYPE="Formulae" NAME="CompanyNameFilter" ISMODIFY="No" ISFIXED="No" ISINTERNAL="No">$$ExactMatch:($$String:$name):&quot;M E - (from 1-Apr-22)&quot;   </SYSTEM>
         </TDLMESSAGE>
       </TDL>
     </DESC>

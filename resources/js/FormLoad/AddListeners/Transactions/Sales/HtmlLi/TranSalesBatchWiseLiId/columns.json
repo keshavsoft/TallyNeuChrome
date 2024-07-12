@@ -67,6 +67,7 @@
     {
         "field": "BatchAmount",
         "title": "BatchAmount",
-        "tagName": "BatchAmount"
+        "tagName": "BatchAmount",
+        "footerFormatter": "jFLocalBatchAmountTotal"
     }
 ]

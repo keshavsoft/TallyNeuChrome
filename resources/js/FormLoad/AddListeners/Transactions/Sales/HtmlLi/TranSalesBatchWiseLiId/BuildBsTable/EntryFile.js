@@ -25,7 +25,7 @@ const jFLocalGetVisibleColumns = () => {
     let jVarVisibleColumns = jVarLocalAllColumns.filter(element => {
         return ("visible" in element) === false || element.visible;
     });
-    console.log("jVarVisibleColumns : ", jVarVisibleColumns);
+    
     return jVarVisibleColumns;
 };
 

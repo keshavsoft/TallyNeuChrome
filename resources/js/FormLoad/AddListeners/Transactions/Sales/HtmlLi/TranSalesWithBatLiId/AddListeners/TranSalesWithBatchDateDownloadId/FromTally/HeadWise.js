@@ -1,4 +1,4 @@
-import ColumnsJson from '../columns.json' with {type: 'json'};
+import ColumnsJson from '../../../columns.json' with {type: 'json'};
 
 const CommonParentTagName = "SALES";
 
@@ -25,6 +25,7 @@ const StartFunc = ({ inXmlFromTally }) => {
     } catch (error) {
         console.log("error : ", error);
     };
+
     return ReturnArray;
 };
 
@@ -59,10 +60,34 @@ let jFLocalReturnValue = ({ inKeyName, inValueName, inTemplateControl }) => {
     };
 
     if (jVarLocalFindTags.length > 1) {
+        // console.log("jVarLocalFindTags  : ", jVarLocalFindTags);
         LoopReturnObject[inValueName] = [];
 
         jVarLocalFindTags.forEach(element => {
-            LoopReturnObject[inValueName].push(element.innerHTML);
+            let LoopInsidebBatches = element.innerHTML.split("\n");
+            let LoopEachBatchItem = {};
+
+            LoopInsidebBatches.forEach(LoopBatchItem => {
+
+                if (LoopBatchItem.search("BATCHITEM") >= 0) {
+                    LoopEachBatchItem.BatchItem = LoopBatchItem.replace("<BATCHITEM>", "").replace("</BATCHITEM>", "").trim();
+                };
+                if (LoopBatchItem.search("BATCHNAME") >= 0) {
+                    LoopEachBatchItem.BatchName = LoopBatchItem.replace("<BATCHNAME>", "").replace("</BATCHNAME>", "").trim();
+                };
+                if (LoopBatchItem.search("BATCHQTY") >= 0) {
+                    LoopEachBatchItem.BatchQty = LoopBatchItem.replace("<BATCHQTY>", "").replace("</BATCHQTY>", "").trim();
+                };
+                if (LoopBatchItem.search("BATCHRATE") >= 0) {
+                    LoopEachBatchItem.BatchRate = LoopBatchItem.replace("<BATCHRATE>", "").replace("</BATCHRATE>", "").trim();
+                };
+
+                if (LoopBatchItem.search("BATCHAMOUNT") >= 0) {
+                    LoopEachBatchItem.BatchAmount = LoopBatchItem.replace("<BATCHAMOUNT>", "").replace("</BATCHAMOUNT>", "").trim();
+                };
+            });
+
+            LoopReturnObject[inValueName].push(LoopEachBatchItem);
         });
     };
 
