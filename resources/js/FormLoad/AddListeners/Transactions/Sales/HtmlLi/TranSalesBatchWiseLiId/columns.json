@@ -53,5 +53,20 @@
         "field": "BatchName",
         "title": "BatchName",
         "tagName": "BatchName"
+    },
+    {
+        "field": "BatchRate",
+        "title": "BatchRate",
+        "tagName": "BatchRate"
+    },
+    {
+        "field": "BatchQty",
+        "title": "BatchQty",
+        "tagName": "BatchQty"
+    },
+    {
+        "field": "BatchAmount",
+        "title": "BatchAmount",
+        "tagName": "BatchAmount"
     }
 ]

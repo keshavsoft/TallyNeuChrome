@@ -16,7 +16,7 @@ const StartFunc = ({ inXmlFromTally }) => {
             };
         };
     });
-    console.log("jVarLocalHeadWise------- : ", jVarLocalBatchWiseArray);
+
     return jVarLocalBatchWiseArray;
 };
 
