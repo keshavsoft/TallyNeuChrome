@@ -10,10 +10,6 @@ let StartFunc = async () => {
         let jVarLocalResponse = await fetch("http://localhost:9000/", config);
 
         return await jVarLocalResponse;
-
-        // if (jVarLocalResponse.status === 200) {
-        //     return await jVarLocalResponse.text();
-        // };
     } catch (error) {
         return await false;
     };

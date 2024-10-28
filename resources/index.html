@@ -1,25 +1,22 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <title>Headers · Bootstrap v5.3</title>
+    <title>KeshavSoft</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
+    <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/bootstrap-table.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/extensions/group-by-v2/bootstrap-table-group-by.css">
+
+    <link rel="stylesheet" href="./css/chosen.css">
 
     <style>
         .btn-circle {
@@ -118,10 +115,6 @@
             display: block !important;
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="./css/headers.css" rel="stylesheet">
 </head>
 
 <body>
@@ -225,414 +218,204 @@
                 d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
 
         </symbol>
-
+        <symbol id="facebook" viewBox="0 0 16 16">
+            <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16">
+            <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 16 16">
+            <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+        </symbol>
     </svg>
 
-
-
-
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-                <use href="#circle-half"></use>
-            </svg>
-            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-                    aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#sun-fill"></use>
-                    </svg>
-                    Light
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-                    aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#moon-stars-fill"></use>
-                    </svg>
-                    Dark
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-                    aria-pressed="true">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#circle-half"></use>
-                    </svg>
-                    Auto
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-        </ul>
-    </div>
-
-    <main>
-        <h1 class="visually-hidden">Headers examples</h1>
-
-        <header class="mb-3" id="MastersHeaderId">
-            <div class="px-3 py-2 text-bg-dark border-bottom">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a id="MastersHeaderATagId" href="/"
-                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                            <svg id="MastersSvgId" class="bi me-2" width="40" height="32" role="img"
-                                aria-label="Bootstrap">
-                                <use id="MastersUseId" xlink:href="#wifiOff" />
-                            </svg>
-                            <span id="MenuNameId" class="fs-4">Menu Name</span>
-                        </a>
-
-                        <ul id="MainUlId" class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-secondary">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#home" />
-                                    </svg>
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-info" id="StockGroupsId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#speedometer2" />
-                                    </svg>
-                                    StockGroups
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="StockCategoryId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#table" />
-                                    </svg>
-                                    StockCategory
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="AccountsId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#grid" />
-                                    </svg>
-                                    Accounts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="HeadId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Items
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TransactionsLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#arrow-left-right" />
-                                    </svg>
-                                    Transactions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#exculde" />
-                                    </svg>
-                                    Masters
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="SendId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    SendToServer
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul id="TranUlId" style="display: none;"
-                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranBackLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#arrowleft" />
-                                    </svg>
-                                    Back
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesAId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Sales
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="SalesId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    SalesSimple
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="SalesWithBatchesId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    SalesWithBatchesId
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="SendId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    SendToServer
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul id="TranSalesUlId" style="display: none;"
-                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesBackLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#arrowleft" />
-                                    </svg>
-                                    Back
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesWithBatLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    WithBatches
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesWithBatchDateLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    WithBatchDate
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesBatchWiseLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    BatchWise
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="TranSalesExportLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Export
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul id="MastersUlId" style="display: none;"
-                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#arrow-90deg-left" />
-                                    </svg>
-                                    Back
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersItemsLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Items
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersLedgersLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#bi-book" />
-                                    </svg>
-                                    Ledgers
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul id="MastersItemsUlId" style="display: none;"
-                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersItemsBackLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Back
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="ItemsShowLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    ShowSimple
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="ItemsExportLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Export
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul id="MastersLedgersUlId" style="display: none;"
-                            class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersLedgersBackLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#arrow-90deg-left" />
-
-                                    </svg>
-                                    Back
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersLedgersShowLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#grid-3*3" />
-                                    </svg>
-                                    Show
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white" id="MastersLedgersExportLiId">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#box-arrow-up" />
-                                    </svg>
-                                    Export
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <div class="px-3 py-2 border-bottom mb-3">
-                <div class="container d-flex flex-wrap justify-content-center">
-                    <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Masters</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data</li>
-                            </ol>
-                        </nav>
-                    </form>
-
-                    <div class="text-end">
-                        <select class="form-select" id="SelectCompanyId">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="container">
-            <div class="spinner-border" id="SpinnerId" role="status" style="display: none;">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-
-            <img id="ShowProgressGifId" src="./gif/clock.gif" alt="" style="display: none;">
-
+    <header>
+        <div class="px-3 py-2 border-bottom">
             <div class="row">
-                <div class="col">
-                    <table id="tableBS">
-                    </table>
+                <div class="col-1">
+                    <a id="MastersHeaderATagId" href="#">
+                        <svg id="MastersSvgId" class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use id="MastersUseId" xlink:href="#wifiOff" />
+                        </svg>
+                    </a>
                 </div>
-            </div>
-
-            <div class="row" id="DatesCard" style="display: none;">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-
-                                <div class="col-md-2">
-                                    <label for="FromDateId" class="form-label">From Date</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="date" class="form-control" id="FromDateId" value="2023-06-01">
-                                </div>
-
-                                <div class="col-md-2">
-                                    <label for="ToDateId" class="form-label">To Date</label>
-
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="date" class="form-control" id="ToDateId" value="2023-06-01">
-                                </div>
-
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-primary" id="TranSalesWithBatchDateDownloadId">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                            <path
-                                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                                            <path
-                                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                                        </svg>
-                                    </button>
-
-                                </div>
-                            </div>
+                <div class="col-3">
+                    <select class="form-select" id="SelectReportId">
+                        <option selected>Open this select menu</option>
+                        <option value="ItemCategories">ItemCategories</option>
+                        <option value="ItemGroups">ItemGroups</option>
+                        <option value="Ledgers">Ledgers</option>
+                        <option value="LedgersAll">LedgersAll</option>
+                        <option value="Items">Items</option>
+                        <option value="ItemsWithGroups">ItemsWithGroups</option>
+                        <option value="ItemsAll">ItemsAll</option>
+                        <option value="Sales">Sales</option>
+                        <option value="SalesBatchLine">SalesBatchLine</option>
+                        <option value="SalesBatchSortNumber">SalesBatchSortNumber</option>
+                        <option value="SalesBatchSortFilter">SalesBatchSortFilter</option>
+                        <option value="SalesBatchMultiSelect">SalesBatchMultiSelect</option>
+                        <option value="SalesBatchMultiShow">SalesBatchMultiShow</option>
+                        <option value="SalesBatchWFilters">SalesBatchWFilters</option>
+                        <option value="SalesBatchGroup">SalesBatchGroup</option>
+                        <option value="SalesBatchGroupTotal">SalesBatchGroupTotal</option>
+                    </select>
+                </div>
+                <div class="col-5" id="PeriodColId" style="display:block;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="FromDateId" class="form-label">From</label>
                         </div>
-                        <div class="card-body">
-                            <table id="tableWithDateBS">
-                            </table>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" id="FromDateId" value="2024-07-12">
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="ToDateId" class="form-label">To</label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" id="ToDateId" value="2024-07-12">
                         </div>
                     </div>
-
+                </div>
+                <div class="col-2">
+                    <select class="form-select" id="SelectCompanyId">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-1">
+                    <a href="#" class="btn btn-primary" id="ShowAId">Show</a>
                 </div>
             </div>
         </div>
+    </header>
 
-        <footer>
-            <h5>KeshavSoft</h5>
-        </footer>
+    <main>
+        <div class="spinner-border" id="SpinnerId" role="status" style="display: none;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <div class="container">
+            <div class="card mt-3">
+                <h5 class="card-header">Filters Dynamic</h5>
+                <div class="card-body" id="FiltersBodyId">
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary" id="ApplyFilterId">Filter Data</a>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="display: none;">
+                <h5 class="card-header">Filters</h5>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Voucher Types</label>
+                        <div class="col-sm-8">
+                            <select id="VoucherTypeFilterId" multiple class="chosen-select form-control" tabindex="1">
+                            </select>
+                        </div>
+                        <button id="VoucherTypeButtonId" class="btn btn-warning col-md-2">Filter</button>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Voucher Numbers</label>
+                        <div class="col-sm-8">
+                            <select id="VoucherNumberFilterId" multiple class="chosen-select form-control" tabindex="1">
+                            </select>
+                        </div>
+                        <button id="VoucherNumberButtonId" class="btn btn-warning col-md-2">Filter</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary" id="ApplyFilterId">Filter Data</a>
+                </div>
+            </div>
+            <div id="toolbar" class="select">
+                <select class="form-control">
+                    <option value="">Export Basic</option>
+                    <option value="all">Export All</option>
+                    <option value="selected">Export Selected</option>
+                </select>
+            </div>
+
+            <table id="tableBS"></table>
+        </div>
     </main>
 
+    <template id="TemplateFilterRowId">
+        <div class="row mb-3" data-columnindex="{{columnindex}}" data-columnname="{{columnname}}">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">{{Label}}</label>
+            <div class="col-sm-8">
+                <select id="{{id}}" multiple class="chosen-select form-control" tabindex="1">
+                </select>
+            </div>
+            <button class="btn btn-warning col-sm-2">Show</button>
+        </div>
+    </template>
+
+    <footer>
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; KeshavSoft v15.7</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#twitter" />
+                            </svg></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#instagram" />
+                            </svg></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#facebook" />
+                            </svg></a></li>
+                </ul>
+            </footer>
+        </div>
+    </footer>
+
+    <template id="GroupHeaderTemplateId">
+        <table class="table">
+            <tr>
+                <td colspan="6">Totals</td>
+            </tr>
+            <tr>
+                <td colspan="6" id="GroupNameId"> </td>
+                <td id="AmountTotalId"> </td>
+                <td></td>
+                <td></td>
+                <td id="QtyTotalId"> </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="GroupHeaderTemplateId1">
+        <div class="row ">
+            <div class="col" id="GroupNameId">
+                GroupName
+            </div>
+            <div class="col" id="QtyTotalId">
+                QtyTotal
+            </div>
+            <div class="col" id="AmountTotalId">
+                AmountTotal
+            </div>
+        </div>
+    </template>
+
+    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -641,32 +424,130 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
+
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/bootstrap-table.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.29.0/tableExport.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.29.0/libs/jsPDF/jspdf.umd.min.js"></script>
 
-    <script>
-        let webSocket
-    </script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/extensions/group-by-v2/bootstrap-table-group-by.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+        integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
+    <script src="./js/chosen.jquery.js"></script>
+
+    <!-- <script src="./js/multiselect-dropdown.js"></script> -->
 
     <script type="module" src="./js/EntryFile.js"></script>
-    <!-- <script type="module" src="./js/ForWebSocket/WebSocketClient.js"></script> -->
-    <script>
-        function jFLocalBatchAmountTotal(data) {
-            console.log("data : ", data);
-            var field = this.field;
 
-            return '$' + data.map(function (row) {
-                console.log("aaaaa", row[field]);
-                return +row[field].substring(1)
+    <script>
+        let jVarGlobalPresentViewData = [];
+        let webSocket;
+
+        function jFLocalBatchAmountTotal(data) {
+            var field = this.field;
+            let LocalTotal = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                };
+
+                return +row[field].replaceAll(",", "");
             }).reduce(function (sum, i) {
                 return sum + i
-            }, 0)
+            }, 0);
+
+            return LocalTotal.toFixed(2);
         };
+
+        function jFLocalQtyTotal(data) {
+            var field = this.field;
+            let LocalTotal = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                };
+
+                return +row[field].replaceAll(",", "");
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0);
+
+            return LocalTotal.toFixed(3);
+        };
+
+        function jFLocaldataGroupByFormatter(value, idx, data) {
+            const jVarLocalAmountArray = data.map(element => {
+                return parseFloat(element.BATCHAMOUNT.replaceAll(",", ""));
+            });
+            const jVarLocalAmountTotal = jVarLocalAmountArray.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+            const jVarLocalQtyArray = data.map(element => {
+                return parseFloat(element.BATCHQTY.replaceAll(",", ""));
+            });
+            const jVarLocalQtyTotal = jVarLocalQtyArray.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+            const template = document.querySelector("#GroupHeaderTemplateId");
+
+            // Clone the new row and insert it into the table
+            const clone = template.content.cloneNode(true);
+
+            const AmountTotalId = clone.querySelector("#AmountTotalId");
+            AmountTotalId.innerHTML = `Amount : <mark>${jVarLocalAmountTotal}</mark>`;
+
+            const QtyTotalId = clone.querySelector("#QtyTotalId");
+            QtyTotalId.innerHTML = `Qty : <mark>${jVarLocalQtyTotal}</mark>`;
+
+            const GroupNameId = clone.querySelector("#GroupNameId");
+            GroupNameId.innerHTML = value;
+
+            const s = new XMLSerializer();
+            const str = s.serializeToString(clone);
+
+            return str;
+            //  return "<h1>Group</h1>";
+        };
+
+        function jFLocaldataGroupByFormatterWithItemName(value, idx, data) {
+            const jVarLocalAmountArray = data.map(element => {
+                return parseFloat(element.BATCHAMOUNT.replaceAll(",", ""));
+            });
+            const jVarLocalAmountTotal = jVarLocalAmountArray.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+            const jVarLocalQtyArray = data.map(element => {
+                return parseFloat(element.BATCHQTY.replaceAll(",", ""));
+            });
+            const jVarLocalQtyTotal = jVarLocalQtyArray.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+            const template = document.querySelector("#GroupHeaderTemplateId");
+
+            // Clone the new row and insert it into the table
+            const clone = template.content.cloneNode(true);
+
+            const AmountTotalId = clone.querySelector("#AmountTotalId");
+            AmountTotalId.innerHTML = `Amount : <mark>${jVarLocalAmountTotal}</mark>`;
+
+            const QtyTotalId = clone.querySelector("#QtyTotalId");
+            QtyTotalId.innerHTML = `Qty : <mark>${jVarLocalQtyTotal}</mark>`;
+
+            const GroupNameId = clone.querySelector("#GroupNameId");
+            GroupNameId.innerHTML = `${data[0].BATCHITEM} - ${value}`;
+
+            const s = new XMLSerializer();
+            const str = s.serializeToString(clone);
+
+            return str;
+            //  return "<h1>Group</h1>";
+        };
+
     </script>
+
+    <script type="module" src="./js/FormLoad/WebSocket.js"></script>
 </body>
 
 </html>

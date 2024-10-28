@@ -1,27 +1,41 @@
-import { StartFunc as XmlToJson } from "./XmlToJson.js";
+import { StartFunc as xml2json } from "../../xml2json.js";
 import { StartFunc as FromTally } from "./FromTally.js";
+import { StartFunc as ShowInSelect } from "./ShowInSelect.js";
 
 let StartFunc = async () => {
     let jVarLocalTallyStatus = await FromTally();
 
     if (jVarLocalTallyStatus.status === 200) {
-        let jVarLocalResponseText = await jVarLocalTallyStatus.text()
-        let jVarLocalJson = XmlToJson({ inXmlFromTally: jVarLocalResponseText });
+        let jVarLocalResponseText = await jVarLocalTallyStatus.text();
 
-        jFLocalToSelect({ inJsonArray: jVarLocalJson });
+        let dom = parseXml(jVarLocalResponseText);
+        let jVarLocalJson = xml2json(dom, "");
+
+        ShowInSelect({ inJsonArray: jVarLocalJson });
     };
 };
 
-let jFLocalToSelect = ({ inJsonArray }) => {
-    let jVarLocalSelectCompanyId = document.getElementById('SelectCompanyId');
+function parseXml(xml) {
+    var dom = null;
+    if (window.DOMParser) {
+        try {
+            dom = (new DOMParser()).parseFromString(xml, "text/xml");
+        }
+        catch (e) { dom = null; }
+    }
+    else if (window.ActiveXObject) {
+        try {
+            dom = new ActiveXObject('Microsoft.XMLDOM');
+            dom.async = false;
+            if (!dom.loadXML(xml)) // parse error ..
 
-    jVarLocalSelectCompanyId.innerHTML = "";
-
-    inJsonArray.forEach(option =>
-        jVarLocalSelectCompanyId.options.add(
-            new Option(option.CompanyName, option.CompanyName)
-        )
-    );
+                window.alert(dom.parseError.reason + dom.parseError.srcText);
+        }
+        catch (e) { dom = null; }
+    }
+    else
+        alert("cannot parse xml string!");
+    return dom;
 };
 
 export { StartFunc };
