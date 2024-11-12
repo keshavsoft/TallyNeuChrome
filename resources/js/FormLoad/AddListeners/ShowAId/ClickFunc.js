@@ -1,10 +1,6 @@
 // import { StartFunc as Sales } from "./Sales/EntryFile.js";
-// import { StartFunc as Ledgers } from "./Ledgers/EntryFile.js";
-// import { StartFunc as Items } from "./Items/EntryFile.js";
-// import { StartFunc as ItemsWithGroups } from "./ItemsWithGroups/EntryFile.js";
 
-
-// import { StartFunc as LedgersAll } from "./LedgersAll/EntryFile.js";
+import { StartFunc as ItemsWithGroups } from "./ItemsWithGroups/EntryFile.js";
 
 // import { StartFunc as SalesBatchLine } from "./SalesBatchLine/EntryFile.js";
 // import { StartFunc as SalesBatchSortNumber } from "./SalesBatchSortNumber/EntryFile.js";
@@ -13,7 +9,7 @@
 // import { StartFunc as SalesBatchMultiShow } from "./SalesBatchMultiShow/EntryFile.js";
 // import { StartFunc as SalesBatchWFilters } from "./SalesBatchWFilters/EntryFile.js";
 // import { StartFunc as SalesBatchGroup } from "./SalesBatchGroup/EntryFile.js";
-// import { StartFunc as SalesBatchGroupTotal } from "./SalesBatchGroupTotal/EntryFile.js";
+import { StartFunc as SalesBatchGroupTotal } from "./SalesBatchGroupTotal/EntryFile.js";
 
 import { StartFunc as ItemCategories } from "./ItemCategories/EntryFile.js";
 import { StartFunc as ItemGroups } from "./ItemGroups/EntryFile.js";
@@ -45,18 +41,11 @@ let StartFunc = async () => {
         // case "Sales":
         //     await Sales();
         //     break;
-        // case "Ledgers":
-        //     await Ledgers();
-        //     break;
-        // case "LedgersAll":
-        //     await LedgersAll();
-        //     break;
-        // case "Items":
-        //     await Items();
-        //     break;
-        // case "ItemsWithGroups":
-        //     await ItemsWithGroups();
-        //     break;
+
+
+        case "ItemsWithGroups":
+            await ItemsWithGroups();
+            break;
         // case "SalesBatchLine":
         //     await SalesBatchLine();
         //     break;
@@ -78,9 +67,9 @@ let StartFunc = async () => {
         // case "SalesBatchGroup":
         //     await SalesBatchGroup();
         //     break;
-        // case "SalesBatchGroupTotal":
-        //     await SalesBatchGroupTotal();
-        //     break;
+        case "SalesBatchGroupTotal":
+            await SalesBatchGroupTotal();
+            break;
         default:
             break;
     }

@@ -1,19 +1,18 @@
+import { StartFunc as showWifi } from "./showWifi.js";
+import { StartFunc as hideWifi } from "./hideWifi.js";
+
 const jVarCommonTallyUrl = "http://localhost:9000/";
 
 let StartFunc = async () => {
     let jVarLocalTallyStatus = await FromTally();
-    let jVarLocalMastersSvgId = document.getElementById('MastersSvgId');
 
     if (jVarLocalTallyStatus) {
-        jFLocalDisplayShowImageWifiId();
-        
-        jVarLocalMastersSvgId.classList.remove("text-danger");
-        jVarLocalMastersSvgId.classList.add("text-success");
+        showWifi();
+        hideWifi();
+        // jFLocalDisplayShowImageWifiId();
+
         return;
     };
-
-    jVarLocalMastersSvgId.classList.remove("text-success");
-    jVarLocalMastersSvgId.classList.add("text-danger");
 };
 
 let FromTally = async () => {
@@ -27,15 +26,6 @@ let FromTally = async () => {
         };
     } catch (error) {
         return await false;
-    };
-};
-
-let jFLocalDisplayShowImageWifiId = () => {
-    let jVarLocalHtmlId = 'ImageWifiId';
-    let jVarLocalImageWifiId = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalImageWifiId === null === false) {
-        jVarLocalImageWifiId.style.display = '';
     };
 };
 
