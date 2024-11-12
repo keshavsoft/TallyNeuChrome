@@ -1,15 +1,39 @@
+import { StartFunc as showControls } from "./showControls.js";
+import { StartFunc as hideControls } from "./hideControls.js";
+
 let StartFunc = (event) => {
     const jVarLocalCurrentTarget = event.currentTarget;
     const jVarLocalSelectValue = jVarLocalCurrentTarget.value;
-    console.log("jVarLocalCurrentTarget : ", jVarLocalCurrentTarget, jVarLocalSelectValue);
+
+    showControls();
+
     switch (jVarLocalSelectValue) {
         case "ItemCategories":
-            console.log("item selected");
+        case "ItemGroups":
+            hideControls();
 
             break;
         default:
 
             break;
+    };
+};
+
+let jFLocalToInputPeriodColId = () => {
+    let jVarLocalHtmlId = 'PeriodColId';
+    let jVarLocalPeriodColId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalPeriodColId === null === false) {
+        jVarLocalPeriodColId.style.display = "none";
+    };
+};
+
+let Show = () => {
+    let jVarLocalHtmlId = 'PeriodColId';
+    let jVarLocalPeriodColId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalPeriodColId === null === false) {
+        jVarLocalPeriodColId.style.display = '';
     };
 };
 

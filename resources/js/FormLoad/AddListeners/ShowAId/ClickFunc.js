@@ -2,7 +2,7 @@
 // import { StartFunc as Ledgers } from "./Ledgers/EntryFile.js";
 // import { StartFunc as Items } from "./Items/EntryFile.js";
 // import { StartFunc as ItemsWithGroups } from "./ItemsWithGroups/EntryFile.js";
-// import { StartFunc as ItemGroups } from "./ItemGroups/EntryFile.js";
+
 
 // import { StartFunc as LedgersAll } from "./LedgersAll/EntryFile.js";
 
@@ -16,6 +16,7 @@
 // import { StartFunc as SalesBatchGroupTotal } from "./SalesBatchGroupTotal/EntryFile.js";
 
 import { StartFunc as ItemCategories } from "./ItemCategories/EntryFile.js";
+import { StartFunc as ItemGroups } from "./ItemGroups/EntryFile.js";
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -35,10 +36,12 @@ let StartFunc = async () => {
     switch (jVarLocalSelectedReport) {
         case "ItemCategories":
             await ItemCategories();
+
             break;
-        // case "ItemGroups":
-        //     await ItemGroups();
-        //     break;
+        case "ItemGroups":
+            await ItemGroups();
+
+            break;
         // case "Sales":
         //     await Sales();
         //     break;
