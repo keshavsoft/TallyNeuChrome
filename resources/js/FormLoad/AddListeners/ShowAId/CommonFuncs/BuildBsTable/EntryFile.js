@@ -1,8 +1,6 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
 const tableName = "tableBS";
 
 const StartFunc = ({ inData, inColumnsArray }) => {
-    // StartFuncTableTag();
     jFLocalInitialize({ inData, inColumnsArray });
 };
 

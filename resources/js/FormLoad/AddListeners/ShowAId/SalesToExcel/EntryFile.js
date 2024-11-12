@@ -10,14 +10,33 @@ let StartFunc = async () => {
         inXmlPath: "Tally/xml/SelectCompany/Transactions/Sales/BatchDate.xml",
         inColumnsArray: ColumnsJson
     });
+
     let jVarLocalDataToShow = JSON.parse(jVarLocalTallyData).ENVELOPE[CommonKeyName];
 
-    jVarGlobalPresentViewData = jFLocalBatchWise({ inData: jVarLocalDataToShow });
+    const jVarLocalBatchLines = jFLocalBatchWise({ inData: jVarLocalDataToShow });
+    const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
+    let jVarLocalArray = [];
+
+    for (const [key, value] of Object.entries(jVarLocalGroupedData)) {
+        jVarLocalArray.push({
+            BATCHNAME: key
+        });
+
+        jVarLocalArray.push(...value);
+    };
+
+    console.log("jVarLocalArray : ", jVarLocalGroupedData, jVarLocalArray);
 
     BuildBsTable({
-        inData: jVarGlobalPresentViewData,
+        inData: jVarLocalArray,
         inColumnsArray: ColumnsJson
     });
+};
+
+const jFLocalGroupByBatch = ({ inData }) => {
+    const result = Object.groupBy(inData, ({ BATCHNAME }) => BATCHNAME);
+
+    return result;
 };
 
 const jFLocalBatchWise = ({ inData }) => {

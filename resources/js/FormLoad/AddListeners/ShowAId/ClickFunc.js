@@ -10,6 +10,7 @@ import { StartFunc as ItemsWithGroups } from "./ItemsWithGroups/EntryFile.js";
 // import { StartFunc as SalesBatchWFilters } from "./SalesBatchWFilters/EntryFile.js";
 // import { StartFunc as SalesBatchGroup } from "./SalesBatchGroup/EntryFile.js";
 import { StartFunc as SalesBatchGroupTotal } from "./SalesBatchGroupTotal/EntryFile.js";
+import { StartFunc as SalesToExcel } from "./SalesToExcel/EntryFile.js";
 
 import { StartFunc as ItemCategories } from "./ItemCategories/EntryFile.js";
 import { StartFunc as ItemGroups } from "./ItemGroups/EntryFile.js";
@@ -69,6 +70,10 @@ let StartFunc = async () => {
         //     break;
         case "SalesBatchGroupTotal":
             await SalesBatchGroupTotal();
+            break;
+        case "SalesToExcel":
+            await SalesToExcel();
+
             break;
         default:
             break;
