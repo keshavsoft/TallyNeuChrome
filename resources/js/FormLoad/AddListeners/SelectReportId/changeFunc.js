@@ -19,22 +19,4 @@ let StartFunc = (event) => {
     };
 };
 
-let jFLocalToInputPeriodColId = () => {
-    let jVarLocalHtmlId = 'PeriodColId';
-    let jVarLocalPeriodColId = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalPeriodColId === null === false) {
-        jVarLocalPeriodColId.style.display = "none";
-    };
-};
-
-let Show = () => {
-    let jVarLocalHtmlId = 'PeriodColId';
-    let jVarLocalPeriodColId = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalPeriodColId === null === false) {
-        jVarLocalPeriodColId.style.display = '';
-    };
-};
-
 export { StartFunc };
