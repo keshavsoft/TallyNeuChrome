@@ -15,15 +15,7 @@ let StartFunc = async () => {
 
     const jVarLocalBatchLines = jFLocalBatchWise({ inData: jVarLocalDataToShow });
     const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
-    let jVarLocalArray = [];
-
-    for (const [key, value] of Object.entries(jVarLocalGroupedData)) {
-        jVarLocalArray.push({
-            BATCHNAME: key
-        });
-
-        jVarLocalArray.push(...value);
-    };
+    let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
     console.log("jVarLocalArray : ", jVarLocalGroupedData, jVarLocalArray);
 
@@ -31,6 +23,33 @@ let StartFunc = async () => {
         inData: jVarLocalArray,
         inColumnsArray: ColumnsJson
     });
+};
+
+const jFLocalInsertRowsForGroups = ({ inDataAsArray }) => {
+    let jVarLocalDataAsArray = inDataAsArray;
+    let jVarLocalArray = [];
+
+    for (const [key, value] of Object.entries(jVarLocalDataAsArray)) {
+        jVarLocalArray.push({
+            BATCHNAME: key
+        });
+
+        jVarLocalArray.push(...value);
+
+        jVarLocalArray.push({
+            BATCHNAME: "---"
+        });
+
+        jVarLocalArray.push({
+            BATCHNAME: "---"
+        });
+
+        jVarLocalArray.push({
+            BATCHNAME: "---"
+        });
+    };
+
+    return jVarLocalArray;
 };
 
 const jFLocalGroupByBatch = ({ inData }) => {
