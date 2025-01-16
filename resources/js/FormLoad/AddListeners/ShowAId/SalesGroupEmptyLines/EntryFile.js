@@ -17,7 +17,7 @@ let StartFunc = async () => {
     const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
     let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
-    // console.log("jVarLocalArray : ", jVarLocalGroupedData, jVarLocalArray);
+    console.log("jVarLocalArray : ", jVarLocalGroupedData, jVarLocalArray);
 
     BuildBsTable({
         inData: jVarLocalArray,

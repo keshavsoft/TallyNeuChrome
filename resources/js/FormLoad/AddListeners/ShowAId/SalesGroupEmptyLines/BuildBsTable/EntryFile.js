@@ -13,12 +13,14 @@ const jFLocalInitialize = ({ inData }) => {
 
     $table.bootstrapTable("destroy").bootstrapTable({
         toolbar: "#toolbar",
+        pagination: "true",
         search: "true",
         searchable: "true",
         showColumns: "true",
         shoColumnsToggleAll: "true",
         showExport: "true",
         showFooter: "true",
+        showPaginationSwitch: "true",
         showFullscreen: "true",
         data: inData,
         columns: jFLocalGetVisibleColumns()
