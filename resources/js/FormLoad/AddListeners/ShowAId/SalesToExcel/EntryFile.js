@@ -3,6 +3,7 @@ import { StartFunc as BuildBsTable } from "./BuildBsTable/EntryFile.js";
 
 const CommonKeyName = "SALES";
 import ColumnsJson from './columns.json' with {type: 'json'};
+import emptyRowJson from './emptyRow.json' with {type: 'json'};
 
 let StartFunc = async () => {
     let jVarLocalTallyData = await CommonFuncs({
@@ -12,6 +13,7 @@ let StartFunc = async () => {
     });
 
     let jVarLocalDataToShow = JSON.parse(jVarLocalTallyData).ENVELOPE[CommonKeyName];
+    jVarGlobalPresentViewData = jVarLocalDataToShow;
 
     const jVarLocalBatchLines = jFLocalBatchWise({ inData: jVarLocalDataToShow });
     const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
@@ -30,27 +32,50 @@ const jFLocalInsertRowsForGroups = ({ inDataAsArray }) => {
     let jVarLocalArray = [];
 
     for (const [key, value] of Object.entries(jVarLocalDataAsArray)) {
-        jVarLocalArray.push({
-            BATCHNAME: key
-        });
+        const jVarLocalBatchHead = Object.assign({}, emptyRowJson);
+        jVarLocalBatchHead.BATCHNAME = key;
+
+        jVarLocalArray.push(jVarLocalBatchHead);
+
+        // jVarLocalArray.push({
+        //     BATCHNAME: key
+        // });
 
         jVarLocalArray.push(...value);
+        debugger;
+        const jVarLocalBatchTotalRow = Object.assign({}, emptyRowJson);
 
-        jVarLocalArray.push({
-            BATCHNAME: "---"
-        });
+        jVarLocalBatchTotalRow.BATCHAMOUNT = jFLocalBatchTotal({ inDataAsArray: value });
+        jVarLocalBatchTotalRow.BatchQtyOnly = jFLocalBatchQtyOnly({ inDataAsArray: value });
 
-        jVarLocalArray.push({
-            BATCHNAME: "---"
-        });
-
-        jVarLocalArray.push({
-            BATCHNAME: "---"
-        });
+        jVarLocalArray.push(jVarLocalBatchTotalRow);
+        jVarLocalArray.push(emptyRowJson);
+        jVarLocalArray.push(emptyRowJson);
     };
 
     return jVarLocalArray;
 };
+
+const jFLocalBatchTotal = ({ inDataAsArray }) => {
+    const jVarLocalAmountArray = inDataAsArray.map(element => {
+        return element.BATCHAMOUNT;
+    });
+
+    var sum = jVarLocalAmountArray.reduce(function (a, b) { return parseFloat(a) + parseFloat(b); }, 0);
+
+    return sum.toFixed(2);
+};
+
+const jFLocalBatchQtyOnly = ({ inDataAsArray }) => {
+    const jVarLocalAmountArray = inDataAsArray.map(element => {
+        return element.BatchQtyOnly;
+    });
+
+    var sum = jVarLocalAmountArray.reduce(function (a, b) { return parseFloat(a) + parseFloat(b); }, 0);
+
+    return sum.toFixed(3);
+};
+
 
 const jFLocalGroupByBatch = ({ inData }) => {
     const result = Object.groupBy(inData, ({ BATCHNAME }) => BATCHNAME);

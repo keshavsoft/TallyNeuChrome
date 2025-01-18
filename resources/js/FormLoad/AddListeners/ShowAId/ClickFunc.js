@@ -71,6 +71,7 @@ let StartFunc = async () => {
         //     break;
         case "SalesBatchGroupTotal":
             await SalesBatchGroupTotal();
+
             break;
         case "SalesGroupEmptyLines":
             await StartFuncSalesGroupEmptyLines();
