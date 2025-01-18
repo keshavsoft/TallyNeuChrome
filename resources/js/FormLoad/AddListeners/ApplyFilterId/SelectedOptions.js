@@ -1,7 +1,19 @@
 let StartFunc = () => {
+    const jVarLocalSelects = document.getElementById("FiltersBodyId").querySelectorAll("select[data-columnname]");
+    let jVarLocalFilterObject = {};
+
+    jVarLocalSelects.forEach((userItem) => {
+        jVarLocalFilterObject[userItem.dataset.columnname] = userItem.value;
+        // console.log("sssssss : ", userItem.dataset.columnname, userItem.value);
+    });
+
+    return jVarLocalFilterObject;
+};
+
+let StartFunc1 = () => {
 
     return $("#VoucherNumberFilterId").val();
-
+    // FiltersBodyId
     const jVarLocalSelect = document.getElementById("VoucherTypeSelectId");
 
     const jVarLocalSelectedOptions = Array.from(jVarLocalSelect.options).filter(function (option_element) {

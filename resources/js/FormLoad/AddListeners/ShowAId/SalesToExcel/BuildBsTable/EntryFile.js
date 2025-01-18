@@ -1,38 +1,10 @@
 import { StartFunc as ShowFilters } from "./ShowFilters/EntryFile.js";
-import ColumnsJson from '../columns.json' with {type: 'json'};
+import { StartFunc as StartFuncShowInTable } from "../ShowInTable/EntryFile.js";
 
-const tableName = "tableBS";
-
-const StartFunc = ({ inData }) => {
-    jFLocalInitialize({ inData });
+const StartFunc = () => {
+    // jFLocalInitialize();
+    StartFuncShowInTable({ inDataToShow: jVarGlobalPresentViewData })
     ShowFilters();
-};
-
-const jFLocalInitialize = ({ inData }) => {
-    var $table = $(`#${tableName}`);
-
-    $table.bootstrapTable("destroy").bootstrapTable({
-        toolbar: "#toolbar",
-        search: "true",
-        searchable: "true",
-        showColumns: "true",
-        shoColumnsToggleAll: "true",
-        showExport: "true",
-        showFooter: "true",
-        showFullscreen: "true",
-        data: inData,
-        columns: jFLocalGetVisibleColumns()
-    });
-};
-
-const jFLocalGetVisibleColumns = () => {
-    let jVarLocalAllColumns = ColumnsJson;
-
-    let jVarVisibleColumns = jVarLocalAllColumns.filter(element => {
-        return ("visible" in element) === false || element.visible;
-    });
-
-    return jVarVisibleColumns;
 };
 
 export { StartFunc };

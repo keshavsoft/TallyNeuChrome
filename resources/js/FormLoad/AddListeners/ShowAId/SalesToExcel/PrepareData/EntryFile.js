@@ -1,6 +1,3 @@
-import { StartFunc as BuildBsTable } from "./BuildBsTable/EntryFile.js";
-
-import ColumnsJson from './columns.json' with {type: 'json'};
 import emptyRowJson from './emptyRow.json' with {type: 'json'};
 
 let StartFunc = ({ inDataToShow }) => {
@@ -11,10 +8,7 @@ let StartFunc = ({ inDataToShow }) => {
 
     let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
-    BuildBsTable({
-        inData: jVarLocalArray,
-        inColumnsArray: ColumnsJson
-    });
+    return jVarLocalArray;
 };
 
 const jFLocalInsertRowsForGroups = ({ inDataAsArray }) => {

@@ -27,6 +27,7 @@ const jFLocalInsertRow = ({ inLabel, inData, inField }) => {
 
     let jVarLocalSelect = clone.querySelector("select");
     jVarLocalSelect.innerHTML = inData.map(t => '<option value="' + t + '">' + t + '</option>');
+    jVarLocalSelect.dataset.columnname = inField;
 
     let jVarLocalButton = clone.querySelector("button");
     jVarLocalButton.addEventListener('click', buttonClick);

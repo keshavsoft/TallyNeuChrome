@@ -1,13 +1,10 @@
 import { StartFunc as nextColumn } from "./nextColumn.js";
-// import { StartFunc as firstRow } from "./firstRow.js";
-// import { StartFunc as firstRowNextRows } from "./firstRowNextRows.js";
 const CommonTableName = "tableBS";
 
 const StartFunc = (evt) => {
     let jVarLocalCurrentTaget = evt.currentTarget;
     let jVarLocalClosestRow = jVarLocalCurrentTaget.closest(".row");
     let jVarLocalPresentColumnIndex = jVarLocalClosestRow.dataset.columnindex;
-    // let jVarLocalFiltersBodyId = document.getElementById("FiltersBodyId");
 
     let jVarLocalFilteredData = jFLocalFilterRows({ inPresentRowIndex: parseInt(jVarLocalPresentColumnIndex) });
 
@@ -15,21 +12,6 @@ const StartFunc = (evt) => {
 
     $table.bootstrapTable("load", jVarLocalFilteredData);
     $table.bootstrapTable("selectPage", 1);
-
-    console.log("jVarLocalFilteredData : ", jVarLocalFilteredData);
-    // switch (parseInt(jVarLocalPresentColumnIndex)) {
-    //     case 0:
-    //         firstRow({ inCurrentTarget: jVarLocalCurrentTaget });
-
-    //         const firstElementChild = jVarLocalFiltersBodyId.firstElementChild;
-
-    //         jVarLocalFiltersBodyId.innerHTML = '';
-    //         jVarLocalFiltersBodyId.append(firstElementChild);
-    //         break;
-    //     default:
-    //         firstRowNextRows({ inCurrentTarget: jVarLocalCurrentTaget });
-    //         break;
-    // };
 
     nextColumn({
         inColumnIndex: parseInt(jVarLocalPresentColumnIndex) + 1,

@@ -7,11 +7,6 @@ const StartFunc = ({ inColumnIndex, inFilteredData }) => {
     let jVarLocalTitle = jVarLocalColumn.title;
     let jVarLocalField = jVarLocalColumn.field;
 
-    // let data = jFLocalFilterRows({ inPresentRowIndex: jVarLocalColumnIndex });
-    // console.log("data : ", data);
-
-    // let data = $("#tableBS").bootstrapTable('getData', { unfiltered: true });
-
     const unique = [...new Set(inFilteredData.map((item) => {
         return item[jVarLocalField];
     }))];
