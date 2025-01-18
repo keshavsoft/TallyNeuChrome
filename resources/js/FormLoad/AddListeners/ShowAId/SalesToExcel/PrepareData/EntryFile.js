@@ -1,25 +1,15 @@
-import { StartFunc as CommonFuncs } from "../Common/WithFilters/EntryFile.js";
 import { StartFunc as BuildBsTable } from "./BuildBsTable/EntryFile.js";
 
-const CommonKeyName = "SALES";
 import ColumnsJson from './columns.json' with {type: 'json'};
 import emptyRowJson from './emptyRow.json' with {type: 'json'};
 
-let StartFunc = async () => {
-    let jVarLocalTallyData = await CommonFuncs({
-        inKeyName: CommonKeyName,
-        inXmlPath: "Tally/xml/SelectCompany/Transactions/Sales/BatchDate.xml",
-        inColumnsArray: ColumnsJson
-    });
-
-    let jVarLocalDataToShow = JSON.parse(jVarLocalTallyData).ENVELOPE[CommonKeyName];
-    jVarGlobalPresentViewData = jVarLocalDataToShow;
+let StartFunc = ({ inDataToShow }) => {
+    let jVarLocalDataToShow = inDataToShow;
 
     const jVarLocalBatchLines = jFLocalBatchWise({ inData: jVarLocalDataToShow });
     const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
-    let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
-    // console.log("jVarLocalArray : ", jVarLocalGroupedData, jVarLocalArray);
+    let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
     BuildBsTable({
         inData: jVarLocalArray,
@@ -71,7 +61,6 @@ const jFLocalBatchQtyOnly = ({ inDataAsArray }) => {
 
     return sum.toFixed(3);
 };
-
 
 const jFLocalGroupByBatch = ({ inData }) => {
     const result = Object.groupBy(inData, ({ BATCHNAME }) => BATCHNAME);
