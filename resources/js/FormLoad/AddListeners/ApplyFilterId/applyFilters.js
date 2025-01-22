@@ -1,14 +1,16 @@
 let StartFunc = () => {
     const jVarLocalSelects = document.getElementById("FiltersBodyId").querySelectorAll("select[data-columnname]");
-    let jVarLocalFilterObject = {};
+    let jVarLocalFilteredData = jVarGlobalPresentViewData;
 
     jVarLocalSelects.forEach((userItem) => {
-        const k1 = $(userItem).chosen().val();
-        jVarLocalFilterObject[userItem.dataset.columnname] = userItem.value;
-        // console.log("sssssss : ", userItem.dataset.columnname, userItem.value);
+        const LoopInsideToFilterValues = $(userItem).chosen().val();
+
+        jVarLocalFilteredData = jVarLocalFilteredData.filter(element => {
+            return LoopInsideToFilterValues.includes(element[userItem.dataset.columnname]);
+        });
     });
 
-    return jVarLocalFilterObject;
+    return jVarLocalFilteredData;
 };
 
 let StartFunc1 = () => {
