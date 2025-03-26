@@ -16,7 +16,6 @@ const jFLocalInitialize = ({ inDataToShow }) => {
         showColumns: "true",
         shoColumnsToggleAll: "true",
         showExport: "true",
-        showFooter: "true",
         showFullscreen: "true",
         data: inDataToShow,
         columns: jFLocalGetVisibleColumns()

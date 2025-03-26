@@ -1,4 +1,5 @@
 import emptyRowJson from './emptyRow.json' with {type: 'json'};
+import { StartFunc as StartFuncFromInsertRowsForGroups } from "./insertRowsForGroups.js";
 
 let StartFunc = ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
@@ -6,7 +7,7 @@ let StartFunc = ({ inDataToShow }) => {
     const jVarLocalBatchLines = jFLocalBatchWise({ inData: jVarLocalDataToShow });
     const jVarLocalGroupedData = jFLocalGroupByBatch({ inData: jVarLocalBatchLines });
 
-    let jVarLocalArray = jFLocalInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
+    let jVarLocalArray = StartFuncFromInsertRowsForGroups({ inDataAsArray: jVarLocalGroupedData });
 
     return jVarLocalArray;
 };
