@@ -14,7 +14,7 @@ import { StartFunc as SalesToExcel } from "./SalesToExcel/EntryFile.js";
 import { StartFunc as StartFuncSalesGroupEmptyLines } from "./SalesGroupEmptyLines/EntryFile.js";
 
 import { StartFunc as ItemCategories } from "./ItemCategories/EntryFile.js";
-import { StartFunc as ItemGroups } from "./ItemGroups/EntryFile.js";
+import { StartFunc as ItemGroups } from "./ItemGroups/entryFile.js";
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
